@@ -1,11 +1,15 @@
 <script>
 import axios from 'axios';
 import ProjectCard from './ProjectCard.vue';
+import NavBar from './partials/NavBar.vue';
+import FooterInfo from './partials/FooterInfo.vue';
 export default {
   name: 'HelloWorld',
 
   components: {
     ProjectCard,
+    NavBar,
+    FooterInfo,
   },
   data() {
     return {
@@ -38,9 +42,13 @@ export default {
 
 
 <template>
+  <NavBar />
   <div class="container">
-    <ProjectCard v-for="project in projects" :ProjectCard="project" />
+    <div class="row row-cols-3">
+      <ProjectCard v-for="project in projects" :ProjectCard="project" />
+    </div>
   </div>
+  <FooterInfo />
 </template>
 
 <style lang="scss" scoped></style>

@@ -15,9 +15,9 @@ export default {
 }
 </script>
 <template>
-    <div class="my-4">
-        <div class="card col-6 p-4 mx-auto">
-            <img width="250" :src="this.img_path + ProjectCard.cover_image" class="card-img-top" :alt="ProjectCard.title">
+    <div class="my-4 col">
+        <div class="card p-4 mx-auto h-100">
+            <img class=" rounded-2 img-fluid" :src="this.img_path + ProjectCard.cover_image" :alt="ProjectCard.title">
             <div class="card-body">
                 <h5 class="card-title"> {{ ProjectCard.title }}</h5>
                 <p class="card-text">
@@ -62,13 +62,15 @@ export default {
                 <li class=" list-group-item d-flex gap-2">
                     <strong>Technologies: </strong>
                     <ul class="d-flex gap-1 list-unstyled">
-                        <div v-if="ProjectCard.technology != []">
-                            <li v-for="tech in ProjectCard.technology" class="badge bg-success">
+                        <li v-if="(ProjectCard.technology).length == 0" class="badge bg-warning">
+                            Nothing technology selected
+                        </li>
+                        <li v-else>
+                            <span v-for="tech in ProjectCard.technology" class="badge me-1 bg-success">
                                 <i class="fas fa-tag fa-xs fa-fw"></i>
                                 {{ tech.name }}
-                            </li>
-                        </div>
-                        <li v-else class="badge bg-warning">Nothing technology selected</li>
+                            </span>
+                        </li>
                     </ul>
 
                 </li>
