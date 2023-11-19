@@ -59,7 +59,8 @@ export default {
 
     goToPage(pageNum) {
       this.active_page = pageNum;
-      this.getData(this.prev_link);
+      console.log('cliccato', pageNum);
+      this.getData(this.base_url);
 
     }
   },
