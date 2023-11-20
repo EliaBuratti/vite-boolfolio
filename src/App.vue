@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <HelloWorld />
+  <router-view></router-view>
 </template>
 
 <style lang="scss" scoped>

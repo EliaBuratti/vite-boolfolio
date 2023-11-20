@@ -81,10 +81,10 @@ export default {
         <ul class="pagination m-0">
           <li class="page-item"><a class="page-link" :class="active_page == 1 ? 'disabled' : ''" @click="prev()"
               href="##">Previous</a></li>
+
+          <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
           <li v-for="page in total_page" class="page-item" :class="active_page === page ? 'active' : ''"
             @click="goToPage(page)"><a class="page-link" href="#">{{ page }}</a></li>
-
-
           <li class="page-item"><a class="page-link" :class="active_page === total_page ? 'disabled' : ''" @click="next()"
               href="##">Next</a>
           </li>
