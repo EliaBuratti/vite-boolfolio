@@ -31,11 +31,11 @@ export default {
             </div>
         </div>
         <div class="container mb-4">
-            <div class="row row-cols-2">
+            <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
                     <img class=" img-fluid" src="https://picsum.photos/600" alt="Lorem picsum">
                 </div>
-                <div class="col">
+                <div class="col mt-4 mt-md-0">
                     <h3>My story</h3>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam cumque eligendi rerum in ab eveniet

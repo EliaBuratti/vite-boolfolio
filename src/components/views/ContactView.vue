@@ -42,6 +42,7 @@ export default {
             <button type="submit" class="btn btn-primary">Contact</button>
         </form>
     </div>
+
     <FooterInfo />
 </template>
 

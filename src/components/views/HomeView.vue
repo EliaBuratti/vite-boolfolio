@@ -78,7 +78,7 @@ export default {
     <div class="container mt-5">
 
         <!-- loading messsage -->
-        <div v-if="projects.length == 0" class="w-100">
+        <div v-if="projects.length == 0" class="w-100 vh-100">
             <div class="h2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                     class="eb_spin"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -107,7 +107,7 @@ export default {
             <div class="text-muted">Page: {{ active_page }} of {{ total_page }}</div>
 
         </div>
-        <div class="row row-cols-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
             <ProjectCard v-for="project in projects" :ProjectCard="project" />
         </div>
     </div>
@@ -115,31 +115,3 @@ export default {
 </template>
 
 <style lang="scss" scoped></style>
-
-
-<!-- <script>
-import NavBar from '../partials/NavBar.vue';
-import FooterInfo from '../partials/FooterInfo.vue';
-export default {
-    name: 'HomeView',
-
-    components: {
-        NavBar,
-        FooterInfo,
-    },
-
-    data() {
-        return {
-
-        }
-    }
-}
-</script>
-
-<template>
-    <NavBar />
-    <h1>Home vue </h1>
-    <FooterInfo />
-</template>
-
-<style lang="scss" scoped></style> -->
