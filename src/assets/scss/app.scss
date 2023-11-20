@@ -1,1 +1,12 @@
 @use '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.eb_spin {
+    animation: spin 2.5s linear infinite;
+}
+
+//animazioni
+@keyframes spin {
+    0% {
+        transform: rotate(1turn);
+    }
+}
