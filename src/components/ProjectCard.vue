@@ -74,6 +74,11 @@ export default {
                     </ul>
 
                 </li>
+                <li class=" list-group-item text-center mt-4">
+                    <router-link :to="{ name: 'project', params: { slug: ProjectCard.slug } }" class="btn btn-outline-dark"
+                        aria-current="page">View
+                        Project</router-link>
+                </li>
             </ul>
         </div>
     </div>

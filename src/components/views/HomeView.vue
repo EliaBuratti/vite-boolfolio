@@ -77,6 +77,7 @@ export default {
     <NavBar />
     <div class="container mt-5">
 
+        <!-- loading messsage -->
         <div v-if="projects.length == 0" class="w-100">
             <div class="h2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
@@ -87,6 +88,8 @@ export default {
                 <span class="ms-2"><em>Loading page...</em></span>
             </div>
         </div>
+
+        <!-- project -->
         <div class="eb_navigation d-flex justify-content-between align-items-center">
             <nav aria-label="Page navigation">
                 <ul class="pagination m-0">
