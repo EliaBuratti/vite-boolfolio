@@ -75,6 +75,17 @@ export default {
 
 <template>
     <NavBar />
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
+            <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
+                passionate about technology. I have excellent practical skills with a tendency towards stimulating and
+                non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new people. My
+                ideal job would be project or objective management and coordination.</p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+    </div>
     <div class="container mt-5">
 
         <!-- loading messsage -->
@@ -90,7 +101,10 @@ export default {
         </div>
 
         <!-- project -->
-        <div class="eb_navigation d-flex justify-content-between align-items-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
+            <ProjectCard v-for="project in projects" :ProjectCard="project" />
+        </div>
+        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5">
             <nav aria-label="Page navigation">
                 <ul class="pagination m-0">
                     <li class="page-item"><a class="page-link" :class="active_page == 1 ? 'disabled' : ''" @click="prev()"
@@ -106,9 +120,6 @@ export default {
             </nav>
             <div class="text-muted">Page: {{ active_page }} of {{ total_page }}</div>
 
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
-            <ProjectCard v-for="project in projects" :ProjectCard="project" />
         </div>
     </div>
     <FooterInfo />

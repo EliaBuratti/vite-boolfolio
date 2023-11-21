@@ -7,9 +7,9 @@ import AboutView from './components/views/AboutView.vue';
 import ProjectView from './components/views/ProjectView.vue'
 // define route
 const routes = [
-    { path: '/', component: HomeView },
-    { path: '/contact', component: ContactView },
-    { path: '/about', component: AboutView },
+    { path: '/', name: 'home', component: HomeView },
+    { path: '/contact', name: 'contact', component: ContactView },
+    { path: '/about', name: 'about', component: AboutView },
     { path: '/project/:slug', name: 'project', component: ProjectView },
 ];
 
