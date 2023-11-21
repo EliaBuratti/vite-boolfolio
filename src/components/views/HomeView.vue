@@ -51,8 +51,7 @@ export default {
             </div>
         </div>
     </div>
-    <div class="w-75 mx-auto mt-5">
-
+    <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5">
         <!-- loading messsage -->
         <div v-if="Api.projects.length == 0" class="w-100 vh-100">
             <div class="h2 d-flex align-items-center justify-content-center">
@@ -80,7 +79,7 @@ export default {
 
                     <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
                     <li v-for="page in Api.total_page" class="page-item" :class="Api.active_page === page ? 'active' : ''"
-                        @click="Api.goToPage(page)"><a class="page-link" href="##">{{ page }}</a></li>
+                        @click="Api.goToPage(page)"><a class="page-link" href="javascript:;">{{ page }}</a></li>
                     <li class="page-item"><a class="page-link" :class="Api.active_page === Api.total_page ? 'disabled' : ''"
                             @click="Api.next()" href="##">Next</a>
                     </li>

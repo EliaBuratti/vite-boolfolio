@@ -58,22 +58,20 @@ export default {
 <style lang="scss" scoped>
 .eb_nav-list {
 
-
     li {
         font-size: 1.5rem;
         margin: 0 1rem;
         padding: 0 0.5rem;
 
         :hover {
-            border-width: 100%;
-            background-color: black;
-            color: white;
+            text-decoration: underline;
         }
     }
 
     .eb_active {
         background-color: black;
         color: white;
+        /*  border-radius: 0.5rem; */
     }
 }
 </style>
