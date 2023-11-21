@@ -4,13 +4,15 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import HomeView from './components/views/HomeView.vue';
 import ContactView from './components/views/ContactView.vue';
 import AboutView from './components/views/AboutView.vue';
-import ProjectView from './components/views/ProjectView.vue'
+import ProjectView from './components/views/ProjectView.vue';
+import NotFound from './components/partials/NotFound.vue';
 // define route
 const routes = [
     { path: '/', name: 'home', component: HomeView },
     { path: '/contact', name: 'contact', component: ContactView },
     { path: '/about', name: 'about', component: AboutView },
     { path: '/project/:slug', name: 'project', component: ProjectView },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ];
 
 const router = createRouter({

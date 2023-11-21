@@ -15,73 +15,56 @@ export default {
 }
 </script>
 <template>
-    <div class="my-4 col">
-        <div class="card p-4 mx-auto h-100">
-            <img class=" rounded-2 img-fluid" :src="this.img_path + ProjectCard.cover_image" :alt="ProjectCard.title">
-            <div class="card-body">
-                <h5 class="card-title"> {{ ProjectCard.title }}</h5>
-                <p class="card-text">
-                    <strong>Descrizione:</strong>
-                    {{ ProjectCard.description }}
-                </p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Skills: </strong> {{ ProjectCard.skills }} </li>
-                <li class="list-group-item"><strong>Project links: </strong>
-                    <a :href="ProjectCard.project_link" class="text-white ms-2" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
-                            version="1.1" id="Layer_1" width="35px" height="35px" viewBox="0 0 92 92"
-                            enable-background="new 0 0 92 92" xml:space="preserve">
-                            <title>Show preview</title>
-                            <path id="XMLID_1719_"
-                                d="M92,13c0-2.2-1.8-4-4-4H4c-2.2,0-4,1.8-4,4v52c0,2.2,1.8,4,4,4h84c2.2,0,4-1.8,4-4V13z M84,61H8V17h76V61z   M69.5,79c0,2.2-1.8,4-4,4H26.5c-2.2,0-4-1.8-4-4s1.8-4,4-4h38.9C67.7,75,69.5,76.8,69.5,79z" />
-                        </svg>
-                    </a>
-                    <a :href="ProjectCard.github_link" class="text-white ms-2" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px"
-                            height="30px" viewBox="0 0 20 20" version="1.1">
+    <div class="mb-4">
+        <div class="p-4 mx-auto h-100">
+            <div class="position-relative eb_image">
+                <img class="img-fluid" :src="this.img_path + ProjectCard.cover_image" :alt="ProjectCard.title">
 
-                            <title>Show Repo on github</title>
-
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)"
-                                    fill="#000000">
-                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                        <path
-                                            d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399">
-                                        </path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </a>
-                </li>
-                <li class=" list-group-item">
-                    <strong>Type: </strong> {{ ProjectCard.type ? ProjectCard.type.name : 'Nothing type selected' }}
-                </li>
-                <li class=" list-group-item d-flex gap-2">
-                    <strong>Technologies: </strong>
-                    <ul class="d-flex gap-1 list-unstyled">
-                        <li v-if="(ProjectCard.technology).length == 0" class="badge bg-warning">
-                            Nothing technology selected
-                        </li>
-                        <li v-else>
-                            <span v-for="tech in ProjectCard.technology" class="badge me-1 bg-success">
-                                <i class="fas fa-tag fa-xs fa-fw"></i>
-                                {{ tech.name }}
-                            </span>
-                        </li>
-                    </ul>
-
-                </li>
-                <li class=" list-group-item text-center mt-4">
-                    <router-link :to="{ name: 'project', params: { slug: ProjectCard.slug } }" class="btn btn-outline-dark"
-                        aria-current="page">View
+                <div class="eb_overlay">
+                    <router-link :to="{ name: 'project', params: { slug: ProjectCard.slug } }"
+                        class="btn btn-outline-light eb_button" aria-current="page">View
                         Project</router-link>
-                </li>
-            </ul>
+                </div>
+            </div>
+            <div class="my-3">
+                <h5 class="card-title"> {{ ProjectCard.title }}</h5>
+            </div>
+            <div class="my-3">
+                <strong>Type: </strong> {{ ProjectCard.type ? ProjectCard.type.name : 'Nothing type selected' }}
+            </div>
+
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+    width: 600px;
+    aspect-ratio: 1.5 / 1;
+    object-fit: cover;
+}
+
+.eb_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(0);
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+.eb_image:hover .eb_overlay {
+    transform: scale(1);
+    border-radius: 0%;
+}
+
+.eb_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</style>

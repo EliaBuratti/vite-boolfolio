@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProjectCard from '../ProjectCard.vue';
 import NavBar from '../partials/NavBar.vue';
 import FooterInfo from '../partials/FooterInfo.vue';
+import state from '../../dataJs/state';
 export default {
     name: 'HomeView',
 
@@ -21,6 +22,8 @@ export default {
             next_link: '',
             prev_link: '',
             total_page: '',
+
+            state,
         }
     },
 
@@ -43,7 +46,7 @@ export default {
                     this.active_page = dataObj.current_page;
                     this.total_page = dataObj.last_page;
                     //console.log(this.prev_link, 'prev', this.next_link, 'next');
-                    console.log(dataObj);
+                    //console.log(dataObj);
                 })
         },
 
@@ -59,7 +62,7 @@ export default {
 
         goToPage(pageNum) {
             this.active_page = pageNum;
-            console.log('cliccato', pageNum);
+            //console.log('cliccato', pageNum);
             this.getData(this.base_url);
 
         }
@@ -77,16 +80,27 @@ export default {
     <NavBar />
 
     <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
-            <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
-                passionate about technology. I have excellent practical skills with a tendency towards stimulating and
-                non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new people. My
-                ideal job would be project or objective management and coordination.</p>
-            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        <div class="container-fluid p-5 d-flex flex-wrap justify-content-center align-items-center">
+
+            <div class="col-12 col-md-7">
+                <div class="col-8 mx-auto">
+                    <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
+                    <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
+                        passionate about technology. I have excellent practical skills with a tendency towards stimulating
+                        and
+                        non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new
+                        people.
+                        My
+                        ideal job would be project or objective management and coordination.</p>
+                    <router-link to="/about" class="btn btn-outline-dark" aria-current="page">About Me</router-link>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 mb-5 mb-md-0">
+                <img class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')" alt="profile picture">
+            </div>
         </div>
     </div>
-    <div class="container mt-5">
+    <div class="w-75 mx-auto mt-5">
 
         <!-- loading messsage -->
         <div v-if="projects.length == 0" class="w-100 vh-100">
@@ -101,6 +115,9 @@ export default {
         </div>
 
         <!-- project -->
+        <div class="col-12 text-center my-5">
+            <h2 class=" text-base display-6 fw-bold">Look all my project below</h2>
+        </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
             <ProjectCard v-for="project in projects" :ProjectCard="project" />
         </div>
@@ -112,7 +129,7 @@ export default {
 
                     <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
                     <li v-for="page in total_page" class="page-item" :class="active_page === page ? 'active' : ''"
-                        @click="goToPage(page)"><a class="page-link" href="#">{{ page }}</a></li>
+                        @click="goToPage(page)"><a class="page-link" href="##">{{ page }}</a></li>
                     <li class="page-item"><a class="page-link" :class="active_page === total_page ? 'disabled' : ''"
                             @click="next()" href="##">Next</a>
                     </li>

@@ -13,7 +13,6 @@ export default {
     data() {
         return {
             load_complete: false,
-            not_found: false,
             project: {},
             base_url: 'http://localhost/api/project',
             img_path: 'http://127.0.0.1/storage/',
@@ -31,9 +30,9 @@ export default {
 
                     this.load_complete = dataObj.status;
                 } else {
-                    this.not_found = true;
+                    this.$router.push({ name: 'NotFound' });
                 }
-                console.log(dataObj);
+                //console.log(dataObj);
             })
             .catch(err => {
                 console.log(err.message);
@@ -49,7 +48,7 @@ export default {
     <!-- loading messsage -->
 
     <div class="eb_bg">
-        <div v-if="!load_complete && !not_found" class="container">
+        <div v-if="!load_complete" class="container">
             <div class="h2 d-flex align-items-center justify-content-center text-muted">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                     class="eb_spin"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -86,18 +85,6 @@ export default {
                 </div>
             </div>
         </div>
-
-        <div v-else-if="not_found">
-            <div class="container my-5 eb_not-found">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col text-center h1">
-                        <strong>Project Not Found 🤷🏼</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <div v-else class="container py-5">
             <div class="row flex-wrap p-3 rounded-4 shadow">
                 <div class="col-12 col-sm py-2">
@@ -164,26 +151,6 @@ export default {
 
                 </div>
             </div>
-            <!--             <div class="row align-items-md-stretch mt-5 rounded-4 eb_card-bg">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 ">
-                        <h2>View repo on Git Hub</h2>
-                        <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look.
-                            Then,
-                            mix and match with additional component themes and more.</p>
-                        <a :href="project.github_link"></a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5">
-                        <h2>Show preview</h2>
-                        <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look.
-                            Then,
-                            mix and match with additional component themes and more.</p>
-                        <button class="btn btn-outline-primary" type="button">Example button</button>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -194,16 +161,4 @@ export default {
 .eb_project-view {
     height: 50vh;
 }
-
-/* .eb_card-bg {
-    background-color: #222831;
-    box-shadow: 0px 0px 20px 10px #EEEEEE, inset 0px 0px 3px 2px #EEEEEE;
-    margin-bottom: 5rem;
-
-} 
-
-.eb_bg {
-    background-color: #222831;
-    color: #EEEEEE;
-}*/
 </style>

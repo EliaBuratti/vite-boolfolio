@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg">
+    <nav class="navbar navbar-expand-lg shadow-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
