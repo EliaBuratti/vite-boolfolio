@@ -43,12 +43,12 @@ export default {
 
 <template>
     <NavBar />
-    <!--     <h1>Project title {{ `${this.base_url}/${this.$route.params.slug}` }}</h1> -->
-
-    <!-- loading messsage -->
 
     <div class="eb_bg">
+
         <div v-if="!load_complete" class="container">
+
+            <!-- loading section -->
             <div class="h2 d-flex align-items-center justify-content-center text-muted">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                     class="eb_spin"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -57,6 +57,8 @@ export default {
                 </svg>
                 <span class="ms-2"><em>Loading project...</em></span>
             </div>
+
+            <!-- my project on loading -->
             <div class="eb_project-view container shadow-lg rounded-3 my-5">
                 <div class="row flex-wrap p-3 h-100 placeholder-glow">
                     <div class="col-12 col-sm">
@@ -79,13 +81,13 @@ export default {
                                 <span class="placeholder col-4 rounded-3"></span>
                             </span>
                         </p>
-
-
                     </div>
                 </div>
             </div>
         </div>
         <div v-else class="container py-5">
+
+            <!-- my project loaded -->
             <div class="row flex-wrap p-3 rounded-4 shadow">
                 <div class="col-12 col-sm py-2">
                     <img width="600" class=" img-fluid rounded-3" :src="img_path + project.cover_image"
@@ -117,8 +119,7 @@ export default {
                         </span>
                     </p>
                     <hr>
-                    <p>
-                        <span class="list-group-item"><strong>Project links: </strong>
+                    <p> <span class="list-group-item"><strong>Project links: </strong>
                             <a :href="project.project_link" class="text-white ms-2" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     fill="#000000" version="1.1" id="Layer_1" width="35px" height="35px" viewBox="0 0 92 92"
@@ -148,7 +149,6 @@ export default {
                             </a>
                         </span>
                     </p>
-
                 </div>
             </div>
         </div>
