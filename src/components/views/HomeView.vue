@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios';
+import Api from '../../dataJs/Api';
 import ProjectCard from '../ProjectCard.vue';
 import NavBar from '../partials/NavBar.vue';
 import FooterInfo from '../partials/FooterInfo.vue';
@@ -14,62 +14,13 @@ export default {
     },
     data() {
         return {
-
-            base_url: 'http://localhost/api/project',
-            page_url: '',
-            projects: '',
-            active_page: 1,
-            next_link: '',
-            prev_link: '',
-            total_page: '',
-
+            Api,
             state,
         }
     },
 
-    methods: {
-
-
-        getData(url) {
-
-            axios.get(url, {
-                params: {
-                    page: this.active_page,
-                }
-
-            })
-                .then(response => {
-                    const dataObj = response.data.response;
-                    this.projects = dataObj.data;
-                    this.next_link = dataObj.next_page_url;
-                    this.prev_link = dataObj.prev_page_url;
-                    this.active_page = dataObj.current_page;
-                    this.total_page = dataObj.last_page;
-                    //console.log(this.prev_link, 'prev', this.next_link, 'next');
-                    //console.log(dataObj);
-                })
-        },
-
-        next() {
-            this.active_page++;
-            this.getData(this.next_link);
-        },
-
-        prev() {
-            this.active_page--;
-            this.getData(this.prev_link);
-        },
-
-        goToPage(pageNum) {
-            this.active_page = pageNum;
-            //console.log('cliccato', pageNum);
-            this.getData(this.base_url);
-
-        }
-    },
-
     created() {
-        this.getData(this.base_url);
+        this.Api.getData(this.Api.base_url);
     }
 
 }
@@ -82,8 +33,8 @@ export default {
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid p-5 d-flex flex-wrap justify-content-center align-items-center">
 
-            <div class="col-12 col-md-7">
-                <div class="col-8 mx-auto">
+            <div class="col-12 col-md-7 text-center text-md-start">
+                <div class="col-12 col-md-8 mx-auto">
                     <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
                     <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
                         passionate about technology. I have excellent practical skills with a tendency towards stimulating
@@ -103,7 +54,7 @@ export default {
     <div class="w-75 mx-auto mt-5">
 
         <!-- loading messsage -->
-        <div v-if="projects.length == 0" class="w-100 vh-100">
+        <div v-if="Api.projects.length == 0" class="w-100 vh-100">
             <div class="h2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                     class="eb_spin"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -119,23 +70,23 @@ export default {
             <h2 class=" text-base display-6 fw-bold">Look all my project below</h2>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
-            <ProjectCard v-for="project in projects" :ProjectCard="project" />
+            <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
         </div>
-        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5">
+        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5 flex-wrap">
             <nav aria-label="Page navigation">
                 <ul class="pagination m-0">
-                    <li class="page-item"><a class="page-link" :class="active_page == 1 ? 'disabled' : ''" @click="prev()"
-                            href="##">Previous</a></li>
+                    <li class="page-item"><a class="page-link" :class="Api.active_page == 1 ? 'disabled' : ''"
+                            @click="Api.prev()" href="##">Previous</a></li>
 
                     <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
-                    <li v-for="page in total_page" class="page-item" :class="active_page === page ? 'active' : ''"
-                        @click="goToPage(page)"><a class="page-link" href="##">{{ page }}</a></li>
-                    <li class="page-item"><a class="page-link" :class="active_page === total_page ? 'disabled' : ''"
-                            @click="next()" href="##">Next</a>
+                    <li v-for="page in Api.total_page" class="page-item" :class="Api.active_page === page ? 'active' : ''"
+                        @click="Api.goToPage(page)"><a class="page-link" href="##">{{ page }}</a></li>
+                    <li class="page-item"><a class="page-link" :class="Api.active_page === Api.total_page ? 'disabled' : ''"
+                            @click="Api.next()" href="##">Next</a>
                     </li>
                 </ul>
             </nav>
-            <div class="text-muted">Page: {{ active_page }} of {{ total_page }}</div>
+            <div class="text-muted mt-3 mt-md-0">Page: {{ Api.active_page }} of {{ Api.total_page }}</div>
 
         </div>
     </div>
