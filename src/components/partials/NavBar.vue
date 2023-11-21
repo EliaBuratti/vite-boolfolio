@@ -39,6 +39,11 @@ export default {
                             aria-current="page">Home</router-link>
                     </li>
                     <li class="p-0 rounded-0">
+                        <router-link to="/projects" class="nav-link"
+                            :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''"
+                            aria-current="page">Projects</router-link>
+                    </li>
+                    <li class="p-0 rounded-0">
                         <router-link to="/contact" class="nav-link"
                             :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
                             aria-current="page">Contact</router-link>
@@ -48,6 +53,7 @@ export default {
                             :class="this.$route.fullPath == '/about' ? 'eb_active' : ''"
                             aria-current="page">About</router-link>
                     </li>
+
                 </ul>
             </div>
         </div>

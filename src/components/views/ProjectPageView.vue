@@ -1,59 +1,40 @@
 <script>
-import Api from '../../dataJs/Api';
-import ProjectCard from '../ProjectCard.vue';
+import axios from 'axios';
 import NavBar from '../partials/NavBar.vue';
 import FooterInfo from '../partials/FooterInfo.vue';
-import state from '../../dataJs/state';
+import ProjectCard from '../ProjectCard.vue';
+import Api from '../../dataJs/Api';
 export default {
-    name: 'HomeView',
+    name: 'ProjectPageView',
 
     components: {
-        ProjectCard,
         NavBar,
         FooterInfo,
+        ProjectCard,
     },
+
     data() {
         return {
+
             Api,
-            state,
+            load_complete: false,
+            img_path: 'http://127.0.0.1/storage/',
+
         }
     },
 
-    created() {
-        this.Api.getData();
+    mounted() {
+        this.Api.getData()
     }
 
 }
 </script>
 
-
 <template>
     <NavBar />
-
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid p-5 d-flex flex-wrap justify-content-center align-items-center">
-
-            <div class="col-12 col-md-7 text-center text-md-start">
-                <div class="col-12 col-md-8 mx-auto">
-                    <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
-                    <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
-                        passionate about technology. I have excellent practical skills with a tendency towards stimulating
-                        and
-                        non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new
-                        people.
-                        My
-                        ideal job would be project or objective management and coordination.</p>
-                    <router-link to="/about" class="btn btn-outline-dark" aria-current="page">About Me</router-link>
-                </div>
-            </div>
-            <div class="col-12 col-md-5 mb-5 mb-md-0">
-                <img class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')" alt="profile picture">
-            </div>
-        </div>
-    </div>
     <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5">
         <!-- loading messsage -->
-        <div v-if="!Api.projects" class="w-100 vh-100">
+        <div v-if="!Api.projectsPage" class="w-100 vh-100">
             <div class="h2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                     class="eb_spin"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -63,16 +44,34 @@ export default {
                 <span class="ms-2"><em>Loading page...</em></span>
             </div>
         </div>
-
         <!-- project -->
         <div class="col-12 text-center my-5">
-            <h2 class=" text-base display-6 fw-bold">Look my latest project below</h2>
+            <h2 class=" text-base display-6 fw-bold">Look all my project below</h2>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
-            <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
+            <ProjectCard v-for="project in Api.projectsPage" :ProjectCard="project" />
+        </div>
+
+        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5 flex-wrap">
+            <nav aria-label="Page navigation">
+                <ul class="pagination m-0">
+                    <li class="page-item"><a class="page-link" :class="Api.active_page == 1 ? 'disabled' : ''"
+                            @click="Api.prev()" href="javascript:;">Previous</a></li>
+
+                    <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
+                    <li v-for="page in Api.total_page" class="page-item" :class="Api.active_page === page ? 'active' : ''"
+                        @click="Api.goToPage(page)"><a class="page-link" href="javascript:;">{{ page }}</a></li>
+                    <li class="page-item"><a class="page-link" :class="Api.active_page === Api.total_page ? 'disabled' : ''"
+                            @click="Api.next()" href="javascript:;">Next</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="text-muted mt-3 mt-md-0">Page: {{ Api.active_page }} of {{ Api.total_page }}</div>
+
         </div>
     </div>
     <FooterInfo />
 </template>
+
 
 <style lang="scss" scoped></style>

@@ -18,7 +18,7 @@ export default {
     <div class="container my-5">
         <div class="row justify-content-center align-items-center">
             <div class="col text-center h1">
-                <strong>Project Not Found 🤷🏼</strong>
+                <strong>Page Not Found 🤷🏼</strong>
                 <div class="col-12 text-center my-5">
                     <router-link to="/" class="display-5 text-black" aria-current="page">Go To
                         Homepage</router-link>
