@@ -6,6 +6,7 @@ export default {
     projects_url: 'http://localhost/api/project', //projects page
     type_url: 'http://localhost/api/type', //type
     technology_url: 'http://localhost/api/technology', //technology
+    contact_url: 'http://localhost/api/contacts', //contacts
     projectsPage: null,
     projects: null,
     technologies: null,
@@ -84,7 +85,7 @@ export default {
     goToPage(pageNum) {
         this.active_page = pageNum;
         //console.log('cliccato', pageNum);
-        this.getPage(this.base_url);
+        this.getPage(this.projects_url);
 
     }
 
