@@ -46,22 +46,24 @@ export default {
         </div>
         <!-- project -->
         <div class="col-12 text-center my-5">
-            <h2 class=" text-base display-6 fw-bold">Look all my project below</h2>
+            <h2 class=" text-base display-6 fw-bold"><span class="eb_active">Look all my project below</span></h2>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
             <ProjectCard v-for="project in Api.projectsPage" :ProjectCard="project" />
         </div>
 
-        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5 flex-wrap">
+        <div class="eb_navigation d-flex justify-content-between align-items-center mb-5 flex-wrap p-2">
             <nav aria-label="Page navigation">
                 <ul class="pagination m-0">
-                    <li class="page-item"><a class="page-link" :class="Api.active_page == 1 ? 'disabled' : ''"
-                            @click="Api.prev()" href="javascript:;">Previous</a></li>
+                    <li class="page-item"><a class="page-link rounded-0"
+                            :class="Api.active_page == 1 ? 'disabled bg-secondary text-white' : ''" @click="Api.prev()"
+                            href="javascript:;">Previous</a></li>
 
                     <!-- da sistemare se ci sono troppe pagine le stampa tutte quante -->
                     <li v-for="page in Api.total_page" class="page-item" :class="Api.active_page === page ? 'active' : ''"
                         @click="Api.goToPage(page)"><a class="page-link" href="javascript:;">{{ page }}</a></li>
-                    <li class="page-item"><a class="page-link" :class="Api.active_page === Api.total_page ? 'disabled' : ''"
+                    <li class="page-item"><a class="page-link rounded-0"
+                            :class="Api.active_page === Api.total_page ? 'disabled bg-secondary text-white' : ''"
                             @click="Api.next()" href="javascript:;">Next</a>
                     </li>
                 </ul>
@@ -74,4 +76,38 @@ export default {
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../../assets/scss/partials/variable.scss' as *;
+
+.pagination>li>a {
+    background-color: $pg-text ;
+    color: $pg-color;
+}
+
+
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    color: $pg-text;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination>li>a:hover,
+.pagination>li>a:focus {
+    color: $pg-text;
+    background-color: $pg-color;
+    border-color: #ddd;
+}
+
+.pagination>.active>a {
+    color: $pg-text;
+    background-color: $pg-color !Important;
+    border: solid 1px $pg-color !Important;
+    transform: scale(1.2);
+}
+
+.pagination>.active>a:hover {
+    background-color: $pg-color !Important;
+    border: solid 1px $pg-color;
+}
+</style>

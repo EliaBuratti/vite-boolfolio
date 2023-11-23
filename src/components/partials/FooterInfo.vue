@@ -28,7 +28,7 @@ export default {
                 </div>
 
 
-                <div class="col text-center">
+                <div class="col text-end">
 
                     <h2 class=" display-5 fw-bold "> <span class="eb_active p-1">Visit my socials</span></h2>
 

@@ -35,22 +35,24 @@ export default {
 
             <div class="col-12 col-md-7 text-center text-md-start">
                 <div class="col-12 col-md-8 mx-auto">
-                    <h1 class="display-5 fw-bold lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
+                    <h1 class="display-6 fw-bold lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
                             class="eb_active px-2">junior web
                             developer</span>
                     </h1>
-                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0" aria-current="page">About
+                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0 mb-4" aria-current="page">About
                         Me</router-link>
                 </div>
             </div>
-            <div class="col-12 col-md-5 mb-5 mb-md-0">
-                <img class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')" alt="profile picture">
+            <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                <img width="400" class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')"
+                    alt="profile picture">
             </div>
         </div>
     </div>
     <!-- title -->
     <div class="col-12 text-center my-5">
-        <h2 class=" text-base display-5 fw-bold"> <span class=" eb_active p-1">Look my latest project below</span></h2>
+        <h2 class=" text-base display-6 fw-bold"> <span class=" eb_active p-1 lh-lg">Look my latest project below</span>
+        </h2>
     </div>
     <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5">
         <!-- loading messsage -->

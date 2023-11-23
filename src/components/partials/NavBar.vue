@@ -22,18 +22,19 @@ export default {
 </script>
 <template>
     <nav class="navbar navbar-expand-lg shadow-lg">
-        <div class="container-fluid p-3">
+        <div class="container-fluid">
             <router-link to="/" class="nav-link active" aria-current="page">
-                <img width="170" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
+                <img width="120" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
             </router-link>
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler mb-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="eb_nav-list navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="eb_nav-list navbar-nav ms-auto mx-2 mb-lg-0">
                     <li class="p-0 rounded-0">
                         <router-link to="/" class="nav-link" :class="this.$route.fullPath == '/' ? 'eb_active' : ''"
                             aria-current="page">Home</router-link>
@@ -70,7 +71,9 @@ export default {
         padding: 0 0.5rem;
 
         :hover {
+            background-color: black;
             text-decoration: underline;
+            color: white;
         }
     }
 
