@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <template>
-    <nav class="navbar navbar-expand-lg shadow-lg">
+    <nav class="navbar navbar-expand-lg border position-static w-100">
         <div class="container-fluid">
             <router-link to="/" class="nav-link active" aria-current="page">
                 <img width="120" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
@@ -34,22 +34,22 @@ export default {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="eb_nav-list navbar-nav ms-auto mx-2 mb-lg-0">
-                    <li class="p-0 rounded-0">
+                <ul class="eb_nav-list navbar-nav ms-auto mb-lg-0">
+                    <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/" class="nav-link" :class="this.$route.fullPath == '/' ? 'eb_active' : ''"
                             aria-current="page">Home</router-link>
                     </li>
-                    <li class="p-0 rounded-0">
+                    <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/projects" class="nav-link"
                             :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''"
                             aria-current="page">Projects</router-link>
                     </li>
-                    <li class="p-0 rounded-0">
+                    <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/contact" class="nav-link"
                             :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
                             aria-current="page">Contact</router-link>
                     </li>
-                    <li class="p-0 rounded-0">
+                    <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/about" class="nav-link"
                             :class="this.$route.fullPath == '/about' ? 'eb_active' : ''"
                             aria-current="page">About</router-link>

@@ -35,10 +35,15 @@ export default {
 
             <div class="col-12 col-md-7 text-center text-md-start">
                 <div class="col-12 col-md-8 mx-auto">
-                    <h1 class="display-6 fw-bold lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
+                    <h1 class="display-6 fw-medium lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
                             class="eb_active px-2">junior web
                             developer</span>
                     </h1>
+                    <p class="fw-medium fs-4">
+                        You will find a selection of my best projects, which showcase my skills from simple
+                        programming languages to frameworks. Each project is accompanied by a detailed description of my
+                        role and the skills I have used.
+                    </p>
                     <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0 mb-4" aria-current="page">About
                         Me</router-link>
                 </div>
@@ -51,10 +56,10 @@ export default {
     </div>
     <!-- title -->
     <div class="col-12 text-center my-5">
-        <h2 class=" text-base display-6 fw-bold"> <span class=" eb_active p-1 lh-lg">Look my latest project below</span>
+        <h2 class=" text-base display-6 fw-medium"> <span class=" eb_active p-1 lh-lg">Look my latest project below</span>
         </h2>
     </div>
-    <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5">
+    <div class="w-75 mx-auto mt-5 p-4 mb-5">
         <!-- loading messsage -->
         <div v-if="!Api.projects" class="w-100 vh-100">
             <div class="h2 d-flex align-items-center justify-content-center">
@@ -71,8 +76,45 @@ export default {
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
             <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
         </div>
+
+        <!-- see all project -->
+        <div class="fw-normal display-4 my-4 eb_fill d-flex justify-content-center align-items-center">
+            <router-link to="/projects" class="nav-link" :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''"
+                aria-current="page" href="javascript:scroll(0,0)"><span class="eb_route-text">See all projects</span>
+            </router-link>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+            </span>
+        </div>
     </div>
     <FooterInfo />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../../assets/scss/partials/variable.scss' as *;
+
+
+//animation all project
+.eb_fill {
+    transition: 2s;
+
+    &:hover .eb_route-text {
+        text-decoration: underline;
+    }
+
+    span {
+        transition: 0.2s;
+        transform: scaleX(0)
+    }
+
+    &:hover span {
+        transform: scaleX(1);
+        padding-left: 1rem;
+    }
+
+}
+</style>

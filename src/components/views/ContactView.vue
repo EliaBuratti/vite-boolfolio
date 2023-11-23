@@ -64,7 +64,7 @@ export default {
 <template>
     <NavBar />
     <div class="container my-5">
-        <h2 class=" text-muted mb-4">Contact Me </h2>
+        <h1 class="display-5 fw-bold mb-4"><span class="eb_active">Contact</span></h1>
         <form action="" v-on:submit.prevent="sendLead()">
             <div class="mb-3">
                 <label for="name" class="form-label">Name and Surname</label>
