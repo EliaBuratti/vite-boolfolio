@@ -22,11 +22,14 @@ export default {
     <div class="container-fluid p-0">
         <div class="p-5 mb-4 bg-light">
             <div class="w-75 mx-auto py-5">
-                <h1 class="display-5 fw-bold">About page</h1>
-                <p class="col fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
-                    previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to
-                    your liking.
-                </p>
+                <h1 class="display-5 fw-bold">About me</h1>
+                <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
+                    passionate about technology. I have excellent practical skills with a tendency towards stimulating
+                    and
+                    non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new
+                    people.
+                    My
+                    ideal job would be project or objective management and coordination.</p>
                 <router-link to="/contact" class="btn btn-primary btn-lg" aria-current="page">Contact Me</router-link>
             </div>
         </div>

@@ -1,7 +1,14 @@
 <script>
+import state from '../../dataJs/state';
 export default {
 
     name: 'footerInfo',
+
+    data() {
+        return {
+            state,
+        }
+    }
 
 }
 </script>
@@ -20,17 +27,24 @@ export default {
                     </ul>
                 </div>
 
-                <div class="col-md-5 offset-md-1 mb-sm-3 mt-5">
-                    <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </form>
+
+                <div class="col text-center">
+
+                    <h2 class=" display-5 fw-bold "> <span class="eb_active p-1">Visit my socials</span></h2>
+
+                    <div class="eb_socials mt-5">
+                        <!-- icon -->
+                        <a v-for="social in state.social_logo" href="##">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
+                                :viewBox="social.icon.viewbox"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path :d="social.icon.path" />
+                                <title>{{ social.name }}</title>
+                            </svg>
+                        </a>
+
+                    </div>
                 </div>
+
             </div>
 
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
@@ -52,4 +66,30 @@ export default {
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../../assets/scss/partials/variable.scss' as *;
+
+.eb_socials {
+
+    a {
+        padding: 1rem;
+
+        svg {
+            fill: $style-color;
+            width: 3rem;
+            height: 3rem;
+            transition: 0.3s;
+            padding: 0.3rem;
+
+        }
+
+        &:hover svg {
+            box-shadow: 0px 0px 8px 9px $style-color;
+            fill: $ligth;
+            background: $style-color;
+            border-radius: 25%;
+        }
+
+    }
+}
+</style>

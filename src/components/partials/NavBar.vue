@@ -74,10 +74,5 @@ export default {
         }
     }
 
-    .eb_active {
-        background-color: black;
-        color: white;
-        /*  border-radius: 0.5rem; */
-    }
 }
 </style>

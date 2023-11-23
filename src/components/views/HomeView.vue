@@ -35,21 +35,22 @@ export default {
 
             <div class="col-12 col-md-7 text-center text-md-start">
                 <div class="col-12 col-md-8 mx-auto">
-                    <h1 class="display-5 fw-bold">Hi, I'm Elia and I'm a junior web developer </h1>
-                    <p class="col-md-8 fs-4">I am a curious, organized person who is attentive to everything around me and
-                        passionate about technology. I have excellent practical skills with a tendency towards stimulating
-                        and
-                        non-monotonous work, a propensity for problem-solving, and a strong desire to learn and meet new
-                        people.
-                        My
-                        ideal job would be project or objective management and coordination.</p>
-                    <router-link to="/about" class="btn btn-outline-dark" aria-current="page">About Me</router-link>
+                    <h1 class="display-5 fw-bold lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
+                            class="eb_active px-2">junior web
+                            developer</span>
+                    </h1>
+                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0" aria-current="page">About
+                        Me</router-link>
                 </div>
             </div>
             <div class="col-12 col-md-5 mb-5 mb-md-0">
                 <img class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')" alt="profile picture">
             </div>
         </div>
+    </div>
+    <!-- title -->
+    <div class="col-12 text-center my-5">
+        <h2 class=" text-base display-5 fw-bold"> <span class=" eb_active p-1">Look my latest project below</span></h2>
     </div>
     <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5">
         <!-- loading messsage -->
@@ -65,9 +66,6 @@ export default {
         </div>
 
         <!-- project -->
-        <div class="col-12 text-center my-5">
-            <h2 class=" text-base display-6 fw-bold">Look my latest project below</h2>
-        </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
             <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
         </div>

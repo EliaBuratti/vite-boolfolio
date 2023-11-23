@@ -1,5 +1,13 @@
 @use '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
+@use '../scss/partials/variable.scss' as *;
+
+.eb_active {
+    background-color: black;
+    color: white;
+    /*  border-radius: 0.5rem; */
+}
+
 .eb_spin {
     animation: spin 2.5s linear infinite;
 }
