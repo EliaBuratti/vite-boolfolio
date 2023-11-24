@@ -11,6 +11,7 @@ export default {
     projects: null,
     technologies: null,
     types: null,
+    projectLoading: false,
 
     //pagination
     active_page: 1,
@@ -52,6 +53,7 @@ export default {
                 this.prev_link = dataObj.prev_page_url;
                 this.active_page = dataObj.current_page;
                 this.total_page = dataObj.last_page;
+                this.projectLoading = false;
             })
     },
 
@@ -73,17 +75,20 @@ export default {
 
 
     next() {
+        this.projectLoading = true;
         this.active_page++;
         this.getPage(this.next_link);
     },
 
     prev() {
+        this.projectLoading = true;
         this.active_page--;
         this.getPage(this.prev_link);
     },
 
     goToPage(pageNum) {
         this.active_page = pageNum;
+        this.projectLoading = true;
         //console.log('cliccato', pageNum);
         this.getPage(this.projects_url);
 

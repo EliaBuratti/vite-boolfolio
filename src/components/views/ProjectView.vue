@@ -59,26 +59,26 @@ export default {
             </div>
 
             <!-- my project on loading -->
-            <div class="eb_project-view container shadow-lg rounded-3 my-5">
+            <div class="eb_project-view container shadow-lg my-5">
                 <div class="row flex-wrap p-3 h-100 placeholder-glow">
                     <div class="col-12 col-sm">
-                        <div class="placeholder col-12 rounded-3 h-100"></div>
+                        <div class="placeholder col-12 h-100"></div>
                     </div>
                     <div class="col text-start">
-                        <h2 class="placeholder col-12 rounded-3"></h2>
-                        <p class="placeholder col-12 rounded-3 h-25"></p>
+                        <h2 class="placeholder col-12"></h2>
+                        <p class="placeholder col-12 h-25"></p>
                         <hr>
                         <p><strong>Technology:</strong>
-                            <span class="placeholder col-3 rounded-3"></span>
+                            <span class="placeholder col-3"></span>
                         </p>
                         <hr>
                         <p><strong>Type:</strong>
-                            <span class="placeholder col-4 rounded-3"></span>
+                            <span class="placeholder col-4"></span>
                         </p>
                         <hr>
                         <p>
                             <span class="list-group-item"><strong>Project links: </strong>
-                                <span class="placeholder col-4 rounded-3"></span>
+                                <span class="placeholder col-4"></span>
                             </span>
                         </p>
                     </div>
@@ -88,35 +88,27 @@ export default {
         <div v-else class="container py-5">
 
             <!-- my project loaded -->
-            <div class="row flex-wrap p-3 rounded-4 shadow">
+            <div class="row flex-wrap p-3 shadow">
                 <div class="col-12 col-sm py-2">
-                    <img width="600" class=" img-fluid rounded-3" :src="img_path + project.cover_image"
-                        :alt="project.title">
+                    <img width="600" class=" img-fluid" :src="img_path + project.cover_image" :alt="project.title">
                 </div>
                 <div class="col text-center text-sm-start">
                     <h2>{{ project.title }}</h2>
                     <p>{{ project.description }}</p>
                     <hr>
-                    <p><strong>Technology: </strong>
+                    <p>
+                        <strong>Technology: </strong>
                         <span v-if="(project.technology).length == 0">
                             Nothing Technology selected
                         </span>
-                        <span v-else>
-                            <span class=" badge bg-success me-1" v-for="tech in project.technology">
-
-                                {{ tech.name }}
-                            </span>
-                        </span>
+                        <span v-else class=" badge bg-success me-1" v-for="tech in project.technology">{{ tech.name
+                        }}</span>
                     </p>
                     <hr>
-                    <p><strong>Type: </strong>
-                        <span v-if="project.type">
-                            {{ project.type.name }}
-                        </span>
-
-                        <span v-else>
-                            Nothing Type selected
-                        </span>
+                    <p>
+                        <strong>Type: </strong>
+                        <span v-if="project.type">{{ project.type.name }}</span>
+                        <span v-else> Nothing Type selected</span>
                     </p>
                     <hr>
                     <p> <span class="list-group-item"><strong>Project links: </strong>

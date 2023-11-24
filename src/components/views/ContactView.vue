@@ -89,7 +89,7 @@ export default {
                 <textarea class="form-control" name="message" id="message" rows="3" v-model="message"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Contact</button>
+            <button type="submit" class="btn btn-dark rounded-0">Contact</button>
         </form>
     </div>
 

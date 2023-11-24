@@ -19,9 +19,17 @@ export default {
         <div class="row justify-content-center align-items-center">
             <div class="col text-center h1">
                 <strong>Page Not Found 🤷🏼</strong>
-                <div class="col-12 text-center my-5">
-                    <router-link to="/" class="display-5 text-black" aria-current="page">Go To
-                        Homepage</router-link>
+                <div class="col-12 text-center my-5 eb_fill">
+                    <router-link to="/" class="display-5 text-black text-decoration-none me-2" aria-current="page">
+                        <span class="eb_route-text">Go To Homepage</span>
+                    </router-link>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                        </svg>
+                    </span>
                 </div>
             </div>
             <div class="col">
@@ -38,11 +46,10 @@ export default {
         </div>
     </div>
 
-    <div class="position-fixed bottom-0 left-0 w-100">
-
-        <FooterInfo />
-    </div>
+    <FooterInfo />
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../../assets/scss/partials/variable.scss' as *;
+</style>

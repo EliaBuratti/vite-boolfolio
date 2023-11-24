@@ -16,6 +16,26 @@
     height: 61vh;
 }
 
+//animation arrow or any span
+.eb_fill {
+    transition: 2s;
+
+    &:hover .eb_route-text {
+        text-decoration: underline;
+    }
+
+    span {
+        transition: 0.2s;
+        transform: scaleX(0)
+    }
+
+    &:hover span {
+        transform: scaleX(1);
+        padding-left: 1rem;
+    }
+
+}
+
 //animazioni
 @keyframes spin {
     0% {
