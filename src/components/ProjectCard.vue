@@ -27,15 +27,15 @@ export default {
                 </div>
             </div>
             <div class="my-3">
-                <h5 class="card-title"> <span class="eb_active p-1 fw-normal">{{ ProjectCard.title }}</span></h5>
+                <h5 class="card-title"> <span class="eb_active p-1 fw-normal lh-lg">{{ ProjectCard.title }}</span></h5>
             </div>
-            <div class="my-3 d-flex align-items-center justify-content-between">
+            <div class="my-3 d-flex flex-wrap align-items-center justify-content-between">
 
                 <span>
                     <strong>Type: </strong> {{ ProjectCard.type ? ProjectCard.type.name : 'Nothing type selected' }}
                 </span>
 
-                <div class="eb_links">
+                <div class="eb_links mt-2 mt-sm-0">
                     <a :href="ProjectCard.project_link" class="text-white ms-2" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
                             version="1.1" id="Layer_1" width="35px" height="35px" viewBox="0 0 92 92"

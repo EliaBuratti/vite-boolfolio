@@ -1,12 +1,3 @@
-<!-- 
-todo:
-loading page
-show error
-empty field
--->
-
-
-
 <script>
 import NavBar from '../partials/NavBar.vue';
 import FooterInfo from '../partials/FooterInfo.vue';
@@ -28,7 +19,7 @@ export default {
             email: '',
             message: '',
             errors: [],
-            complete: null,
+            success: null,
             load: false,
         }
     },
@@ -36,7 +27,7 @@ export default {
     methods: {
         sendLead() {
             this.load = true;
-            this.complete = null;
+            this.success = null;
             this.errors = [];
 
             const leadData = {
@@ -50,10 +41,24 @@ export default {
 
             axios.post(this.Api.contact_url, leadData).then(response => {
 
-                console.log(response);
+                const responseQuery = response.data.success;
+
+                if (!responseQuery) {
+                    //console.log(response.data.errors);
+                    this.errors = response.data.errors;
+                } else {
+                    this.name = '';
+                    this.object = '';
+                    this.email = '';
+                    this.message = '';
+                    this.success = response.data.success;
+                }
+
+                this.load = false;
+                //console.log(response);
             })
                 .catch(error => {
-                    console.error(error.message);
+                    //console.error(error.message);
                 })
 
         }
@@ -69,24 +74,45 @@ export default {
             <div class="mb-3">
                 <label for="name" class="form-label">Name and Surname</label>
                 <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
-                    placeholder="Mario Rossi" v-model="name">
+                    placeholder="Mario Rossi" v-model="name" :class="{ 'is-invalid': errors.name }">
                 <small id="helpId" class="form-text text-muted">Your name and surname</small>
+                <div class="alert alert-danger" role="alert" v-if="errors.name">
+                    <strong>Erorr! </strong>
+                    <span v-for="message in errors.name">{{ message }}</span>
+
+                </div>
             </div>
             <div class="mb-3">
-                <label for="object" class="form-label">Object</label>
+                <label for="object" class="form-label">Subject</label>
                 <input type="text" class="form-control" name="object" id="object" aria-describedby="helpId"
-                    placeholder="Mario Rossi" v-model="object">
-                <small id="helpId" class="form-text text-muted">Write an object for Contact</small>
+                    placeholder="Mario Rossi" v-model="object" :class="{ 'is-invalid': errors.object }">
+                <small id="helpId" class="form-text text-muted">Write an subject for Contact</small>
+                <div class="alert alert-danger" role="alert" v-if="errors.object">
+                    <strong>Erorrs!</strong>
+                    <span v-for="message in errors.object">{{ message }}</span>
+                </div>
+
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
-                    placeholder="abc@mail.com" v-model="email">
+                    placeholder="abc@mail.com" v-model="email" :class="{ 'is-invalid': errors.email }">
                 <small id="emailHelpId" class="form-text text-muted">Your email</small>
+                <div class="alert alert-danger" role="alert" v-if="errors.email">
+                    <strong>Erorrs!</strong>
+                    <span v-for="message in errors.email">{{ message }}</span>
+                </div>
+
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Your Message</label>
-                <textarea class="form-control" name="message" id="message" rows="3" v-model="message"></textarea>
+                <textarea class="form-control" name="message" id="message" rows="3" v-model="message"
+                    :class="{ 'is-invalid': errors.message }"></textarea>
+                <div class="alert alert-danger mt-4" role="alert" v-if="errors.message">
+                    <strong>Erorrs!</strong>
+                    <span v-for="message in errors.message">{{ message }}</span>
+                </div>
+
             </div>
 
             <button type="submit" class="btn btn-dark rounded-0">Contact</button>

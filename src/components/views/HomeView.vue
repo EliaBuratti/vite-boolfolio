@@ -32,8 +32,8 @@ export default {
 <template>
     <NavBar />
 
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid p-5 d-flex flex-wrap justify-content-center align-items-center">
+    <div class="p-2 p-md-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid p-md-5 d-flex flex-wrap justify-content-center align-items-center">
 
             <div class="col-12 col-md-7 text-center text-md-start">
                 <div class="col-12 col-md-8 mx-auto">
@@ -61,7 +61,7 @@ export default {
         <h2 class=" text-base display-6 fw-medium"> <span class=" eb_active p-1 lh-lg">Look my latest project below</span>
         </h2>
     </div>
-    <div class="w-75 mx-auto mt-5 p-4 mb-5">
+    <div class="col-12 col-md-9 mx-auto mt-5 px-4 p-md-4 mb-5">
         <!-- loading page -->
         <div v-if="!Api.projects" class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 "> <!-- v-if="!Api.projects" -->
 
@@ -70,13 +70,15 @@ export default {
 
         <!-- project -->
         <div v-else class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
+
             <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
 
-
             <!-- see all project -->
-            <div class="fw-normal display-4 my-4 eb_fill d-flex justify-content-center align-items-center w-100">
-                <router-link to="/projects" class="nav-link" :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''"
-                    aria-current="page" href="javascript:scroll(0,0)">
+            <div
+                class="fw-normal display-4 my-md-4 eb_fill d-flex justify-content-center align-items-center w-100 text-center">
+                <router-link to="/projects" class="text-decoration-none text-black"
+                    :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''" aria-current="page"
+                    href="javascript:scroll(0,0)">
                     <span class="eb_route-text">See all projects</span>
                 </router-link>
                 <span>

@@ -17,29 +17,18 @@ export default {
         <div class="w-75 mx-auto">
             <div class="row justify-content-between">
 
-                <div class="col p-0">
+                <div class="col-12 col-md text-center text-md-start mb-5 mb-md-0 p-0">
                     <h2><span class="eb_active display-5">Get in touch!</span></h2>
                     <router-link to="/contact" class="btn btn-lg btn-dark rounded-0"
                         :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
                         aria-current="page">Contact</router-link>
                 </div>
-                <!--                 <div v-for="n in 3" class="col-4 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                    </ul>
-                </div> -->
 
-
-                <div class="col text-center text-md-end p-0">
+                <div class="col-12 col-md text-center text-md-end p-0">
 
                     <h2 class=" display-5"> <span class="eb_active p-1">Visit my socials</span></h2>
 
-                    <div class="eb_socials mt-5">
+                    <div class="eb_socials mt-4">
                         <!-- icon -->
                         <a v-for="social in state.social_logo" href="##">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
