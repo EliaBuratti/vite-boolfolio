@@ -2,11 +2,12 @@ import axios from 'axios';
 import { reactive } from 'vue';
 
 export default {
-    project_url: 'http://127.0.0.1:8000/api/project', //homepage
-    projects_url: 'http://127.0.0.1:8000/api/project', //projects page
-    type_url: 'http://127.0.0.1:8000/api/type', //type
-    technology_url: 'http://127.0.0.1:8000/api/technology', //technology
-    contact_url: 'http://127.0.0.1:8000/api/contacts', //contacts  http://127.0.0.1:8000/
+    base_url: 'http://127.0.0.1:8000/api/',
+    project_url: 'project', //homepage
+    //projects_url: 'project', projects page
+    type_url: 'type', //type
+    technology_url: 'technology', //technology
+    contact_url: 'contacts', //contacts  http://127.0.0.1:8000/
     projectsPage: null,
     projects: null,
     technologies: null,
@@ -20,21 +21,21 @@ export default {
     total_page: '',
     getData() {
 
-        Promise.all([this.getProjects(), this.getProjectsPage(), this.getTechnologies(), this.getType()])
-            .then(([projectsDt, projectPageDt, techonogiesDt, typeDt]) => {
+        Promise.all([this.getProjects(), this.getTechnologies(), this.getType()])
+            .then(([projectsDt, techonogiesDt, typeDt]) => {
 
                 this.projects = projectsDt.data.response.data;
-                this.projectsPage = projectPageDt.data.response.data;
+                this.projectsPage = projectsDt.data.response.data;
                 this.technologies = techonogiesDt.data.response.data;
                 this.types = typeDt.data.response.data;
 
                 //pagination 
-                this.next_link = projectPageDt.data.response.next_page_url;
-                this.prev_link = projectPageDt.data.response.prev_page_url;
-                this.active_page = projectPageDt.data.response.current_page;
-                this.total_page = projectPageDt.data.response.last_page;
+                this.next_link = projectsDt.data.response.next_page_url;
+                this.prev_link = projectsDt.data.response.prev_page_url;
+                this.active_page = projectsDt.data.response.current_page;
+                this.total_page = projectsDt.data.response.last_page;
 
-                console.log(projectPageDt);
+                console.log(projectsDt);
 
             });
     },
@@ -58,19 +59,15 @@ export default {
     },
 
     getProjects() {
-        return axios.get(this.project_url);
-    },
-
-    getProjectsPage() {
-        return axios.get(this.projects_url);
+        return axios.get(this.base_url + this.project_url);
     },
 
     getTechnologies() {
-        return axios.get(this.technology_url);
+        return axios.get(this.base_url + this.technology_url);
     },
 
     getType() {
-        return axios.get(this.type_url);
+        return axios.get(this.base_url + this.type_url);
     },
 
 
