@@ -44,7 +44,6 @@ export default {
                 const responseQuery = response.data.success;
 
                 if (!responseQuery) {
-                    //console.log(response.data.errors);
                     this.errors = response.data.errors;
                 } else {
                     this.name = '';
@@ -55,10 +54,9 @@ export default {
                 }
 
                 this.load = false;
-                //console.log(response);
             })
                 .catch(error => {
-                    //console.error(error.message);
+                    console.error(error.message);
                 })
 
         }
@@ -77,7 +75,7 @@ export default {
                     placeholder="Mario Rossi" v-model="name" :class="{ 'is-invalid': errors.name }">
                 <small id="helpId" class="form-text text-muted">Your name and surname</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.name">
-                    <strong>Erorr! </strong>
+                    <strong>Error! </strong>
                     <span v-for="message in errors.name">{{ message }}</span>
 
                 </div>
@@ -88,7 +86,7 @@ export default {
                     placeholder="Mario Rossi" v-model="object" :class="{ 'is-invalid': errors.object }">
                 <small id="helpId" class="form-text text-muted">Write an subject for Contact</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.object">
-                    <strong>Erorrs!</strong>
+                    <strong>Errors!</strong>
                     <span v-for="message in errors.object">{{ message }}</span>
                 </div>
 
@@ -99,7 +97,7 @@ export default {
                     placeholder="abc@mail.com" v-model="email" :class="{ 'is-invalid': errors.email }">
                 <small id="emailHelpId" class="form-text text-muted">Your email</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.email">
-                    <strong>Erorrs!</strong>
+                    <strong>Errors!</strong>
                     <span v-for="message in errors.email">{{ message }}</span>
                 </div>
 
@@ -109,7 +107,7 @@ export default {
                 <textarea class="form-control" name="message" id="message" rows="3" v-model="message"
                     :class="{ 'is-invalid': errors.message }"></textarea>
                 <div class="alert alert-danger mt-4" role="alert" v-if="errors.message">
-                    <strong>Erorrs!</strong>
+                    <strong>Errors!</strong>
                     <span v-for="message in errors.message">{{ message }}</span>
                 </div>
 
