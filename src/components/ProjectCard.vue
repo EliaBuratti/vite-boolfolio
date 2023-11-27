@@ -8,7 +8,7 @@ export default {
 
     data() {
         return {
-            img_path: 'http://127.0.0.1/storage/',
+            img_path: 'http://127.0.0.1:8000/storage/',
         }
     }
 

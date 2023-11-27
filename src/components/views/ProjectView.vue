@@ -14,8 +14,8 @@ export default {
         return {
             load_complete: false,
             project: {},
-            base_url: 'http://localhost/api/project',
-            img_path: 'http://127.0.0.1/storage/',
+            base_url: 'http://127.0.0.1:8000/api/project',
+            img_path: 'http://127.0.0.1:8000/storage/',
         }
     },
 

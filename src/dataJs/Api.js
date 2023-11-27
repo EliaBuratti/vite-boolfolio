@@ -2,11 +2,11 @@ import axios from 'axios';
 import { reactive } from 'vue';
 
 export default {
-    project_url: 'http://localhost/api/project', //homepage
-    projects_url: 'http://localhost/api/project', //projects page
-    type_url: 'http://localhost/api/type', //type
-    technology_url: 'http://localhost/api/technology', //technology
-    contact_url: 'http://localhost/api/contacts', //contacts
+    project_url: 'http://127.0.0.1:8000/api/project', //homepage
+    projects_url: 'http://127.0.0.1:8000/api/project', //projects page
+    type_url: 'http://127.0.0.1:8000/api/type', //type
+    technology_url: 'http://127.0.0.1:8000/api/technology', //technology
+    contact_url: 'http://127.0.0.1:8000/api/contacts', //contacts  http://127.0.0.1:8000/
     projectsPage: null,
     projects: null,
     technologies: null,
