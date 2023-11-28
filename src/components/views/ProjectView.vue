@@ -32,7 +32,6 @@ export default {
                 } else {
                     this.$router.push({ name: 'NotFound' });
                 }
-                //console.log(dataObj);
             })
             .catch(err => {
                 console.log(err.message);

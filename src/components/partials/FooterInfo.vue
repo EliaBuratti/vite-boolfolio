@@ -17,45 +17,41 @@ export default {
         <div class="w-75 mx-auto">
             <div class="row justify-content-between">
 
-                <div class="col-12 col-md text-center text-md-start mb-5 mb-md-0 p-0">
+                <div class="col-12 col-md text-center text-md-start mb-5 mb-md-0 pe-5">
                     <h2><span class="eb_active display-5">Get in touch!</span></h2>
-                    <router-link to="/contact" class="btn btn-lg btn-dark rounded-0"
+                    <p class="mt-3 fs-5">If you found my projects interesting or would like more information, do not
+                        hesitate to contact me.
+                        I will be happy to respond and discuss how my projects could be beneficial for you!</p>
+                    <router-link to="/contact" class="btn btn-lg btn-dark rounded-0 mb-3"
                         :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
                         aria-current="page">Contact</router-link>
+
                 </div>
+                <div class="col-12 col-md text-center text-md-end mb-5 mb-md-0 ps-5">
 
-                <div class="col-12 col-md text-center text-md-end p-0">
 
-                    <h2 class=" display-5"> <span class="eb_active p-1">Visit my socials</span></h2>
+                    <div class="eb_socials">
+                        <h2><span class="eb_active display-5">Find more!</span></h2>
 
-                    <div class="eb_socials mt-4">
-                        <!-- icon -->
-                        <a v-for="social in state.social_logo" href="##">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
-                                :viewBox="social.icon.viewbox"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                <path :d="social.icon.path" />
-                                <title>{{ social.name }}</title>
-                            </svg>
-                        </a>
+                        <p class="mt-3 fs-5">
+                            If you wish, I invite you to visit my LinkedIn profile to learn more about my educational
+                            journey
+                            and training. You will find detailed information about my studies and the skills I have
+                            acquired.
+                        </p>
+
+                        <a href="https://www.linkedin.com/in/elia-buratti-242054221"
+                            class="btn btn-lg btn-dark rounded-0 mb-3" target="_blank">LinkedIn</a>
+
 
                     </div>
                 </div>
 
+
             </div>
 
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
-                <p>© 2022 Company, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#twitter"></use>
-                            </svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#instagram"></use>
-                            </svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#facebook"></use>
-                            </svg></a></li>
-                </ul>
+                <p>© 2023 Company, Inc. All rights reserved.</p>
             </div>
         </div>
     </div>
@@ -64,28 +60,4 @@ export default {
 
 <style lang="scss" scoped>
 @use '../../assets/scss/partials/variable.scss' as *;
-
-.eb_socials {
-
-    a {
-        padding: 1rem;
-
-        svg {
-            fill: $style-color;
-            width: 3rem;
-            height: 3rem;
-            transition: 0.3s;
-            padding: 0.3rem;
-
-        }
-
-        &:hover svg {
-            box-shadow: 0px 0px 8px 9px $style-color;
-            fill: $ligth;
-            background: $style-color;
-            border-radius: 25%;
-        }
-
-    }
-}
 </style>

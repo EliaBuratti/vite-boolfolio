@@ -52,10 +52,11 @@ export default {
         </div>
         <div class="col-5 mb-5">
             <label for="typeId">Choose one of type filter</label>
-            <select id="typeId" name="typeId" v-model="type" @click="type ? Api.getFilter(type) : Api.getData()"
-                class="form-select mt-2" aria-label="Default select example">
+            <select id="typeId" name="typeId" v-model="type" class="form-select mt-2" aria-label="Default select example"
+                @change="type ? Api.getFilter(type) : Api.getData()">
                 <option :value="false" :selected="!type">All</option>
-                <option v-for="$type in Api.types" :value="$type.id">{{ $type.name }}
+                <option v-for="$type in Api.types" :value="$type.id">
+                    {{ $type.name }}
                 </option>
             </select>
 
