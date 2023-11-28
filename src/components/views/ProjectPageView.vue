@@ -21,6 +21,7 @@ export default {
             Api,
             load_complete: false,
             img_path: 'http://127.0.0.1/storage/',
+            type: false,
 
         }
     },
@@ -48,6 +49,16 @@ export default {
                     </svg>
                 </span>
             </h2>
+        </div>
+        <div class="col-5 mb-5">
+            <label for="typeId">Choose one of type filter</label>
+            <select v-model="type" @click="type ? Api.getFilter(type) : Api.getData()" class="form-select mt-2"
+                aria-label="Default select example" id="typeId">
+                <option :value="false" :selected="!type">All</option>
+                <option v-for="$type in Api.types" :value="$type.id">{{ $type.name }}
+                </option>
+            </select>
+
         </div>
         <div v-if="Api.projectLoading" class="row row-cols-1 row-cols-sm-2 row-cols-xl-3">
             <LoadingProjectCard v-for="n in 6" />

@@ -2,12 +2,11 @@ import axios from 'axios';
 import { reactive } from 'vue';
 
 export default {
-    base_url: 'http://127.0.0.1:8000/api/',
-    project_url: 'project', //homepage
-    //projects_url: 'project', projects page
-    type_url: 'type', //type
-    technology_url: 'technology', //technology
-    contact_url: 'contacts', //contacts  http://127.0.0.1:8000/
+    base_url: 'http://127.0.0.1:8000/api',
+    project_url: '/project', //homepage
+    type_url: '/type', //type
+    technology_url: '/technology', //technology
+    contact_url: '/contacts', //contacts  http://127.0.0.1:8000/
     projectsPage: null,
     projects: null,
     technologies: null,
@@ -26,8 +25,9 @@ export default {
 
                 this.projects = projectsDt.data.response.data;
                 this.projectsPage = projectsDt.data.response.data;
-                this.technologies = techonogiesDt.data.response.data;
-                this.types = typeDt.data.response.data;
+                this.technologies = techonogiesDt.data.response;
+                this.types = typeDt.data.response;
+                //console.log(this.technologies);
 
                 //pagination 
                 this.next_link = projectsDt.data.response.next_page_url;
@@ -35,7 +35,7 @@ export default {
                 this.active_page = projectsDt.data.response.current_page;
                 this.total_page = projectsDt.data.response.last_page;
 
-                console.log(projectsDt);
+                //console.log(projectsDt);
 
             });
     },
@@ -56,6 +56,27 @@ export default {
                 this.total_page = dataObj.last_page;
                 this.projectLoading = false;
             })
+    },
+
+    getFilter($id) {
+        console.log('cliccato', $id);
+        axios.get((this.base_url + this.project_url + this.type_url + `/${$id}`), {
+            params: {
+                page: this.active_page,
+            }
+
+        })
+            .then(response => {
+                console.log(response);
+                const dataObj = response.data.response;
+                this.projectsPage = dataObj.data;
+                this.next_link = dataObj.next_page_url;
+                this.prev_link = dataObj.prev_page_url;
+                this.active_page = dataObj.current_page;
+                this.total_page = dataObj.last_page;
+                this.projectLoading = false;
+            })
+
     },
 
     getProjects() {
@@ -87,7 +108,7 @@ export default {
         this.active_page = pageNum;
         this.projectLoading = true;
         //console.log('cliccato', pageNum);
-        this.getPage(this.projects_url);
+        this.getPage(this.base_url + this.project_url);
 
     }
 
