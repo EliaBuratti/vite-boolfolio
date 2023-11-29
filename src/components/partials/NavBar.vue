@@ -22,7 +22,7 @@ export default {
 </script>
 <template>
     <nav class="navbar navbar-expand-lg border position-static w-100">
-        <div class="container-fluid">
+        <div class="container-fluid col-md-9">
             <router-link to="/" class="nav-link active" aria-current="page">
                 <img width="120" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
             </router-link>
@@ -37,22 +37,22 @@ export default {
                 <ul class="eb_nav-list navbar-nav ms-auto mb-lg-0">
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/" class="nav-link" :class="this.$route.fullPath == '/' ? 'eb_active' : ''"
-                            aria-current="page">Home</router-link>
+                            aria-current="page"><span>Home</span></router-link>
                     </li>
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/projects" class="nav-link"
                             :class="this.$route.fullPath == '/projects' ? 'eb_active' : ''"
-                            aria-current="page">Projects</router-link>
+                            aria-current="page"><span>Projects</span></router-link>
                     </li>
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/contact" class="nav-link"
                             :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
-                            aria-current="page">Contact</router-link>
+                            aria-current="page"><span>Contact</span></router-link>
                     </li>
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/about" class="nav-link"
                             :class="this.$route.fullPath == '/about' ? 'eb_active' : ''"
-                            aria-current="page">About</router-link>
+                            aria-current="page"><span>About</span></router-link>
                     </li>
 
                 </ul>
@@ -63,6 +63,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@use '../../assets/scss/partials/variable.scss' as *;
+
 .eb_nav-list {
 
     li {
@@ -71,9 +73,9 @@ export default {
         padding: 0 0.5rem;
 
         :hover {
+            color: $pg-text;
             background-color: black;
             text-decoration: underline;
-            color: white;
         }
     }
 

@@ -4,8 +4,12 @@
 
 .eb_active {
     background-color: black;
-    color: white;
-    /*  border-radius: 0.5rem; */
+    color: $pg-text;
+
+    span {
+        color: $pg-text;
+        text-decoration: underline;
+    }
 }
 
 .eb_spin {

@@ -2,16 +2,12 @@
 import Api from '../../dataJs/Api';
 import ProjectCard from '../ProjectCard.vue';
 import LoadingProjectCard from '../partials/LoadingProjectCard.vue';
-import NavBar from '../partials/NavBar.vue';
-import FooterInfo from '../partials/FooterInfo.vue';
 import state from '../../dataJs/state';
 export default {
     name: 'HomeView',
 
     components: {
         ProjectCard,
-        NavBar,
-        FooterInfo,
         LoadingProjectCard,
     },
     data() {
@@ -30,8 +26,6 @@ export default {
 
 
 <template>
-    <NavBar />
-
     <div class="p-2 p-md-5 mb-4 bg-light rounded-3">
         <div class="container-fluid p-md-5 d-flex flex-wrap justify-content-center align-items-center">
 
@@ -91,7 +85,6 @@ export default {
             </div>
         </div>
     </div>
-    <FooterInfo />
 </template>
 
 <style lang="scss" scoped>

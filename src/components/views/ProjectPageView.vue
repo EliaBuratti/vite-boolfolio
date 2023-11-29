@@ -1,7 +1,5 @@
 <script>
 import axios from 'axios';
-import NavBar from '../partials/NavBar.vue';
-import FooterInfo from '../partials/FooterInfo.vue';
 import ProjectCard from '../ProjectCard.vue';
 import LoadingProjectCard from '../partials/LoadingProjectCard.vue';
 import Api from '../../dataJs/Api';
@@ -9,8 +7,6 @@ export default {
     name: 'ProjectPageView',
 
     components: {
-        NavBar,
-        FooterInfo,
         ProjectCard,
         LoadingProjectCard,
     },
@@ -34,7 +30,6 @@ export default {
 </script>
 
 <template>
-    <NavBar />
     <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5 eb_project-view">
         <!-- loading messsage -->
         <!-- project -->
@@ -88,7 +83,6 @@ export default {
 
         </div>
     </div>
-    <FooterInfo />
 </template>
 
 

@@ -1,15 +1,8 @@
 <script>
-import NavBar from '../partials/NavBar.vue';
-import FooterInfo from '../partials/FooterInfo.vue';
 import axios, { Axios } from 'axios';
 import Api from '../../dataJs/Api';
 export default {
     name: 'ContactView',
-
-    components: {
-        NavBar,
-        FooterInfo,
-    },
 
     data() {
         return {
@@ -65,7 +58,6 @@ export default {
 </script>
 
 <template>
-    <NavBar />
     <div class="container my-5">
         <h1 class="display-5 fw-bold mb-4"><span class="eb_active">Contact</span></h1>
         <form action="" v-on:submit.prevent="sendLead()">
@@ -104,8 +96,8 @@ export default {
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Your Message</label>
-                <textarea class="form-control" name="message" id="message" rows="3" v-model="message"
-                    :class="{ 'is-invalid': errors.message }"></textarea>
+                <textarea class="form-control" name="message" id="message" v-model="message"
+                    :class="{ 'is-invalid': errors.message }" rows="10" cols="50"></textarea>
                 <div class="alert alert-danger mt-4" role="alert" v-if="errors.message">
                     <strong>Errors!</strong>
                     <span v-for="message in errors.message">{{ message }}</span>
@@ -116,8 +108,6 @@ export default {
             <button type="submit" class="btn btn-dark rounded-0">Contact</button>
         </form>
     </div>
-
-    <FooterInfo />
 </template>
 
 <style lang="scss" scoped></style>

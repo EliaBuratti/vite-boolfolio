@@ -1,14 +1,9 @@
 <script>
 import axios from 'axios';
-import NavBar from '../partials/NavBar.vue';
-import FooterInfo from '../partials/FooterInfo.vue';
 export default {
     name: 'ContactView',
 
-    components: {
-        NavBar,
-        FooterInfo,
-    },
+
 
     data() {
         return {
@@ -41,8 +36,6 @@ export default {
 </script>
 
 <template>
-    <NavBar />
-
     <div class="eb_bg">
 
         <div v-if="!load_complete" class="container">
@@ -144,8 +137,6 @@ export default {
             </div>
         </div>
     </div>
-
-    <FooterInfo />
 </template>
 
 <style lang="scss" scoped>

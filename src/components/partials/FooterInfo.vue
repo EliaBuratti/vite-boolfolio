@@ -14,12 +14,12 @@ export default {
 </script>
 <template>
     <div class="container-fluid shadow-lg py-4 bg-body-tertiary">
-        <div class="w-75 mx-auto">
+        <div class="col-md-9 mx-auto">
             <div class="row justify-content-between">
 
-                <div class="col-12 col-md text-center text-md-start mb-5 mb-md-0 pe-5">
+                <div class="col-12 col-md text-md-start mb-5 mb-md-0">
                     <h2><span class="eb_active display-5">Get in touch!</span></h2>
-                    <p class="mt-3 fs-5">If you found my projects interesting or would like more information, do not
+                    <p class="mt-3 fs-5 pe-md-5">If you found my projects interesting or would like more information, do not
                         hesitate to contact me.
                         I will be happy to respond and discuss how my projects could be beneficial for you!</p>
                     <router-link to="/contact" class="btn btn-lg btn-dark rounded-0 mb-3"
@@ -27,13 +27,13 @@ export default {
                         aria-current="page">Contact</router-link>
 
                 </div>
-                <div class="col-12 col-md text-center text-md-end mb-5 mb-md-0 ps-5">
+                <div class="col-12 col-md text-md-end mb-5 mb-md-0">
 
 
                     <div class="eb_socials">
                         <h2><span class="eb_active display-5">Find more!</span></h2>
 
-                        <p class="mt-3 fs-5">
+                        <p class="mt-3 fs-5 ps-md-5">
                             If you wish, I invite you to visit my LinkedIn profile to learn more about my educational
                             journey
                             and training. You will find detailed information about my studies and the skills I have
