@@ -33,7 +33,7 @@ export default {
                 <!-- my profile -->
                 <div class="col-12 mt-5 mt-md-4 d-flex flex-wrap">
                     <div class="col-12 col-md-8">
-                        <h3><span class="eb_active">My Profile</span></h3>
+                        <h3 class="my-3"><span class="eb_active">My Profile</span></h3>
                         <p>
                             I'm 27 years old and live in Cesena. I recently completed a course as a
                             <strong>Full Stack Web Developer</strong>
@@ -57,7 +57,7 @@ export default {
 
                 <!-- My Personal Competitions -->
                 <div class="col-12 mt-5 mt-md-4">
-                    <h3><span class="eb_active">My Personal Competitions</span></h3>
+                    <h3 class="my-3"><span class="eb_active">My Personal Competitions</span></h3>
                     <p>
                         As a <strong>problem-solver</strong>, I approach challenges with logic and strategy. My ability to
                         <strong>listen</strong> helps me
@@ -77,7 +77,7 @@ export default {
                 <div class="col-12 mt-5 mt-md-4">
                     <h3><span class="eb_active">My Experience</span></h3>
 
-                    <div class="mb-3 border-2 border-bottom">
+                    <div class="my-3 border-2 border-bottom">
 
                         <h5 class="mb-1">AUTOMATED REFRIGERATOR CELL OPERATOR EDUCATION</h5>
                         <div class="text-muted fs-6"><strong>Orogel</strong> Jun-2019 / Jun-2023 </div>
@@ -108,6 +108,46 @@ export default {
                         <p>
                             Computer assembly, first installation and configuration based on needs. Formatting and data
                             recovery.
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <!-- my educations -->
+                <div class="col-12 mt-5 mt-md-4">
+                    <h3><span class="eb_active">My Education</span></h3>
+
+                    <div class="my-3 border-2 border-bottom">
+
+                        <h5 class="mb-1">BOOLEAN CAREERS - CORSO DA FULL STACK WEB DEVELOPER</h5>
+                        <div class="text-muted fs-6"><strong>Boolean</strong> Jun-2023 / Dec-2023 (on course)</div>
+                        <p>
+                            During the intensive course (lasting 700 hours) in Full-Stack Web Development at Boolean, I had
+                            the opportunity to fully immerse myself in learning web technologies. This experience allowed me
+                            to closely examine the architectures of large platforms, reconstructing them from both the
+                            back-end and front-end. In addition to the skills reported, composer, npm, mamp, phpmyadmin, and
+                            Git are also included.
+                        </p>
+
+                    </div>
+
+                    <div class="mb-3 border-2 border-bottom">
+                        <h5 class="mb-1">IPSIA U. BALDO COMANDINI DI CESENA</h5>
+                        <div class="text-muted fs-6">
+                            <strong>Technical and Professional Institute Diploma</strong>
+                            Sep-2010 / Jul-2015
+                        </div>
+                        <p>
+                            Repair and maintenance technology of electrical/electronic and mechanical devices
+                        </p>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5 class="mb-1">IPSIA U. BALDO COMANDINI DI CESENA</h5>
+                        <div class="text-muted fs-6"><strong>Electronic qualification</strong>sept-2010 / jug-2023</div>
+                        <p>
+                            Electrical/Electronic Design and Electrical/Electronic CAD/CADD Design
                         </p>
                     </div>
 
