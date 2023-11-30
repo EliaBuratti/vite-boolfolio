@@ -1,11 +1,13 @@
 <script>
+import state from '../../dataJs/state';
+
 export default {
     name: 'AboutView',
 
 
     data() {
         return {
-
+            state,
         }
     }
 }
@@ -153,6 +155,16 @@ export default {
 
 
                 </div>
+
+                <div class="col-12 mt-5 mt-md-4">
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/bootstrap.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/html-5.png')" alt="bootstrap logo">
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
