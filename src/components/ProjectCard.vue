@@ -15,8 +15,8 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-4 ">
-        <div class="p-4 mx-auto h-100 shadow">
+    <div class="mb-4  ">
+        <div class="p-4 mx-auto h-100 eb_shadow">
             <div class="position-relative eb_image">
                 <img class="img-fluid" :src="this.img_path + ProjectCard.cover_image" :alt="ProjectCard.title">
 
@@ -101,5 +101,10 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+//shadow effect
+.eb_shadow {
+    box-shadow: 10px 10px 10px grey, 0 0 10px black;
 }
 </style>

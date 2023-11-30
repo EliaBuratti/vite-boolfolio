@@ -21,8 +21,9 @@ export default {
 }
 </script>
 <template>
-    <nav class="navbar navbar-expand-lg border position-static w-100">
-        <div class="container-fluid col-md-9">
+    <nav class="navbar navbar-expand-lg border-0 eb_nav-bg w-100"
+        :class="this.$route.fullPath == '/' ? 'position-absolute top-0' : ''">
+        <div class="container-fluid col-md-9 col-xl-10">
             <router-link to="/" class="nav-link active" aria-current="page">
                 <img width="120" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
             </router-link>
@@ -64,6 +65,10 @@ export default {
 
 <style lang="scss" scoped>
 @use '../../assets/scss/partials/variable.scss' as *;
+
+.eb_nav-bg {
+    //background: linear-gradient(180deg, $pg-text 0, transparent 90%);
+}
 
 .eb_nav-list {
 

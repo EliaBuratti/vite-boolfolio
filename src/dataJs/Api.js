@@ -64,32 +64,32 @@ export default {
     },
 
     getFilter($id) {
-        this.filterSet = true,
-            this.projectLoading = true,
-            axios.get((this.base_url + this.project_url + this.type_url + `/${$id}`), {
-                params: {
-                    page: this.active_page,
+        this.filterSet = true;
+        this.projectLoading = true;
+        axios.get((this.base_url + this.project_url + this.type_url + `/${$id}`), {
+            params: {
+                page: this.active_page,
+            }
+
+        })
+            .then(response => {
+
+                if (response.data.status) {
+                    const dataObj = response.data.response;
+                    this.projectsPage = dataObj.data;
+                    this.next_link = dataObj.next_page_url;
+                    this.prev_link = dataObj.prev_page_url;
+                    this.active_page = dataObj.current_page;
+                    this.total_page = dataObj.last_page;
+                    this.projectLoading = false;
+
+                } else {
+                    this.$router.push({ name: 'NotFound' });
                 }
-
             })
-                .then(response => {
-
-                    if (response.data.status) {
-                        const dataObj = response.data.response;
-                        console.log(dataObj);
-                        this.projectsPage = dataObj.data;
-                        this.next_link = dataObj.next_page_url;
-                        this.prev_link = dataObj.prev_page_url;
-                        this.active_page = dataObj.current_page;
-                        this.total_page = dataObj.last_page;
-                        this.projectLoading = false;
-                    } else {
-                        this.$router.push({ name: 'NotFound' });
-                    }
-                })
-                .catch(err => {
-                    console.log(err.message);
-                })
+            .catch(err => {
+                console.log(err.message);
+            })
 
     },
 
@@ -119,10 +119,9 @@ export default {
     },
 
     goToPage(pageNum) {
-        this.active_page = pageNum;
-
 
         if (this.active_page !== pageNum) {
+            this.active_page = pageNum;
             this.projectLoading = true;
 
             if (this.filterSet) {
@@ -132,9 +131,6 @@ export default {
                 this.getPage(this.base_url + this.project_url);
             }
         }
-
-
-
 
     }
 

@@ -14,7 +14,7 @@ export default {
 </script>
 <template>
     <div class="container-fluid shadow-lg py-4 bg-body-tertiary">
-        <div class="col-md-9 mx-auto">
+        <div class="col-md-9 col-xl-10 mx-auto">
             <div class="row justify-content-between">
 
                 <div class="col-12 col-md text-md-start mb-5 mb-md-0">

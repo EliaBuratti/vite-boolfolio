@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-75 mx-auto mt-5 shadow-lg p-4 mb-5 eb_project-view">
+    <div class="w-75 mx-auto mt-5 p-4 mb-5 eb_project-view">
         <!-- loading messsage -->
         <!-- project -->
         <div class="col-12 text-center mb-5">

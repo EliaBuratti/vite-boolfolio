@@ -26,22 +26,23 @@ export default {
 
 
 <template>
-    <div class="p-2 p-md-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid p-md-5 d-flex flex-wrap justify-content-center align-items-center">
+    <div class="p-2 p-md-5 mb-4 eb_jumbo">
+        <div class="container-fluid pt-md-5 d-flex flex-wrap justify-content-center align-items-center">
 
-            <div class="col-12 col-md-7 text-center text-md-start">
+            <div class="col-12 col-md-7 text-center text-md-start mt-5">
                 <div class="col-12 col-md-8 mx-auto">
-                    <h1 class="display-6 fw-medium lh-lg">Hi, I'm <span class="eb_active px-2">Elia</span> and I'm a <span
-                            class="eb_active px-2">junior web
+                    <h1 class="display-6 fw-medium lh-lg tracking-in-expand">Hi, I'm <span
+                            class="eb_active px-2">Elia</span> and I'm a <span class="eb_active px-2">junior web
                             developer</span>
                     </h1>
-                    <p class="fw-medium fs-4">
+                    <p class="fw-medium fs-4 text-focus-in ">
                         You will find a selection of my best projects, which showcase my skills from simple
                         programming languages to frameworks. Each project is accompanied by a detailed description of my
                         role and the skills I have used.
                     </p>
-                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0 mb-4" aria-current="page">About
-                        Me</router-link>
+                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0 mb-4 text-focus-in "
+                        aria-current="page">AboutMe
+                    </router-link>
                 </div>
             </div>
             <div class="col-12 col-md d-flex align-items-center justify-content-center">
@@ -55,15 +56,15 @@ export default {
         <h2 class=" text-base display-6 fw-medium"> <span class=" eb_active p-1 lh-lg">Look my latest project below</span>
         </h2>
     </div>
-    <div class="col-12 col-md-9 mx-auto mt-5 px-4 p-md-4 mb-5">
+    <div class="col-12 col-md-9 col-xl-10 mx-auto mt-5 px-4 p-md-4 mb-5">
         <!-- loading page -->
-        <div v-if="!Api.projects" class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 "> <!-- v-if="!Api.projects" -->
+        <div v-if="!Api.projects" class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
 
             <LoadingProjectCard v-for="n in 6" />
         </div>
 
         <!-- project -->
-        <div v-else class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
+        <div v-else class="row row-cols-1 row-cols-sm-2 row-cols-xl-3">
 
             <ProjectCard v-for="project in Api.projects" :ProjectCard="project" />
 
@@ -89,4 +90,8 @@ export default {
 
 <style lang="scss" scoped>
 @use '../../assets/scss/partials/variable.scss' as *;
+
+.eb_jumbo {
+    background: linear-gradient(0deg, $pg-text 10%, rgb(90, 175, 203) 100%);
+}
 </style>
