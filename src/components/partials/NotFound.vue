@@ -1,20 +1,10 @@
 <script>
-import NavBar from './NavBar.vue';
-import FooterInfo from './FooterInfo.vue';
 export default {
     name: 'NotFound',
-
-    components: {
-        NavBar,
-        FooterInfo,
-    },
-
 }
 </script>
 
 <template>
-    <NavBar />
-
     <div class="container my-5">
         <div class="row justify-content-center align-items-center">
             <div class="col text-center h1">
@@ -45,8 +35,6 @@ export default {
             </div>
         </div>
     </div>
-
-    <FooterInfo />
 </template>
 
 

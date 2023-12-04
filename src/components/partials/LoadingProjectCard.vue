@@ -7,8 +7,8 @@ export default {
 
 
 <template>
-    <div class="mb-4">
-        <div class="p-4 shadow placeholder-glow">
+    <div class="mb-4 p-5">
+        <div class="p-4 eb_shadow placeholder-glow">
             <div class="position-relative placeholder">
                 <div class="eb_placeholder-image placeholder"></div>
             </div>
@@ -25,7 +25,11 @@ export default {
 <style lang="scss" scoped>
 .eb_placeholder-image {
     width: 19.5vw;
-    height: 23vh;
+    height: 22vh;
     //aspect-ratio: 1.5 / 1;
+}
+
+.eb_shadow {
+    box-shadow: 20px 20px 10px rgb(209, 208, 208), 0 0 10px rgb(107, 106, 106);
 }
 </style>

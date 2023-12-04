@@ -12,6 +12,25 @@
     }
 }
 
+.eb_btn-slide {
+    background: none;
+    border: 2px solid;
+    line-height: 1;
+    padding: 1em 2em;
+    transition: 0.5s;
+    text-decoration: none;
+    color: $pg-color;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 15em 0 0 0 $pg-color;
+        color: $pg-text;
+        border: 2px solid;
+    }
+}
+
+
+
 .eb_spin {
     animation: spin 2.5s linear infinite;
 }

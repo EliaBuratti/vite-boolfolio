@@ -15,8 +15,8 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-4  ">
-        <div class="p-4 mx-auto h-100 eb_shadow">
+    <div class="mb-4 p-2 p-md-4">
+        <div class=" mx-auto h-100 eb_shadow">
             <div class="position-relative eb_image">
                 <img class="img-fluid" :src="this.img_path + ProjectCard.cover_image" :alt="ProjectCard.title">
 
@@ -26,10 +26,10 @@ export default {
                         Project</router-link>
                 </div>
             </div>
-            <div class="my-3">
-                <h5 class="card-title"> <span class="eb_active p-1 fw-normal lh-lg">{{ ProjectCard.title }}</span></h5>
-            </div>
-            <div class="my-3 d-flex flex-wrap align-items-center justify-content-between">
+
+
+            <h5 class="card-title p-3 pb-0"> <span class="eb_active p-1 fw-normal lh-lg">{{ ProjectCard.title }}</span></h5>
+            <div class="my-3 d-flex flex-wrap align-items-center justify-content-between px-3">
 
                 <span>
                     <strong>Type: </strong> {{ ProjectCard.type ? ProjectCard.type.name : 'Nothing type selected' }}
@@ -65,16 +65,13 @@ export default {
                     </a>
                 </div>
 
-
             </div>
-
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 img {
-    width: 600px;
     aspect-ratio: 1.5 / 1;
     object-fit: cover;
 }
@@ -105,6 +102,6 @@ img {
 
 //shadow effect
 .eb_shadow {
-    box-shadow: 10px 10px 10px grey, 0 0 10px black;
+    box-shadow: 20px 20px 10px rgb(209, 208, 208), 0 0 10px rgb(107, 106, 106);
 }
 </style>

@@ -35,13 +35,12 @@ export default {
                             class="eb_active px-2">Elia</span> and I'm a <span class="eb_active px-2">junior web
                             developer</span>
                     </h1>
-                    <p class="fw-medium fs-4 text-focus-in ">
+                    <p class="fw-medium fs-4 text-focus-in pb-4">
                         You will find a selection of my best projects, which showcase my skills from simple
                         programming languages to frameworks. Each project is accompanied by a detailed description of my
                         role and the skills I have used.
                     </p>
-                    <router-link to="/about" class="btn btn-lg btn-dark mt-4 rounded-0 mb-4 text-focus-in "
-                        aria-current="page">AboutMe
+                    <router-link to="/about" class="eb_btn-slide text-focus-in " aria-current="page">AboutMe
                     </router-link>
                 </div>
             </div>
@@ -92,6 +91,6 @@ export default {
 @use '../../assets/scss/partials/variable.scss' as *;
 
 .eb_jumbo {
-    background: linear-gradient(0deg, $pg-text 10%, rgb(90, 175, 203) 100%);
+    //background: linear-gradient(0deg, $pg-text 10%, rgb(195, 195, 195) 100%);
 }
 </style>

@@ -18,30 +18,29 @@ export default {
             <div class="row justify-content-between">
 
                 <div class="col-12 col-md text-md-start mb-5 mb-md-0">
-                    <h2><span class="eb_active display-5">Get in touch!</span></h2>
-                    <p class="mt-3 fs-5 pe-md-5">If you found my projects interesting or would like more information, do not
+                    <h2><span class=" display-5">Get in touch!</span></h2>
+                    <p class="mt-3 fs-5 pe-md-5 pb-4">If you found my projects interesting or would like more information,
+                        do not
                         hesitate to contact me.
                         I will be happy to respond and discuss how my projects could be beneficial for you!</p>
-                    <router-link to="/contact" class="btn btn-lg btn-dark rounded-0 mb-3"
-                        :class="this.$route.fullPath == '/contact' ? 'eb_active' : ''"
-                        aria-current="page">Contact</router-link>
+                    <router-link to="/contact" class="eb_btn-slide mb-3" aria-current="page">Contact</router-link>
 
-                </div>
+                </div><!-- class="btn btn-lg btn-dark rounded-0 mb-3 " -->
                 <div class="col-12 col-md text-md-end mb-5 mb-md-0">
 
 
                     <div class="eb_socials">
-                        <h2><span class="eb_active display-5">Find more!</span></h2>
+                        <h2><span class="display-5">Find more!</span></h2>
 
-                        <p class="mt-3 fs-5 ps-md-5">
+                        <p class="mt-3 fs-5 ps-md-5 pb-4">
                             If you wish, I invite you to visit my LinkedIn profile to learn more about my educational
                             journey
                             and training. You will find detailed information about my studies and the skills I have
                             acquired.
                         </p>
 
-                        <a href="https://www.linkedin.com/in/elia-buratti-242054221"
-                            class="btn btn-lg btn-dark rounded-0 mb-3" target="_blank">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/elia-buratti-242054221" class="eb_btn-slide"
+                            target="_blank">LinkedIn</a>
 
 
                     </div>

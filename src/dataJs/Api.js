@@ -64,6 +64,7 @@ export default {
     },
 
     getFilter($id) {
+        this.active_page = 1;
         this.filterSet = true;
         this.projectLoading = true;
         axios.get((this.base_url + this.project_url + this.type_url + `/${$id}`), {

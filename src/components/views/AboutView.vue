@@ -81,7 +81,7 @@ export default {
 
                     <div class="my-3 border-2 border-bottom">
 
-                        <h5 class="mb-1">AUTOMATED REFRIGERATOR CELL OPERATOR EDUCATION</h5>
+                        <h5 class="mb-1">AUTOMATED REFRIGERATOR CELL OPERATOR</h5>
                         <div class="text-muted fs-6"><strong>Orogel</strong> Jun-2019 / Jun-2023 </div>
                         <p>
                             Supervisor control, automated cell management with stacker cranes, with small maintenance
@@ -156,12 +156,36 @@ export default {
 
                 </div>
 
-                <div class="col-12 mt-5 mt-md-4">
+                <div class="col-12 mt-5 mt-md-4 d-flex justify-content-between">
                     <div class="logo">
                         <img :src="state.getImagePath('icons-program/bootstrap.png')" alt="bootstrap logo">
                     </div>
                     <div class="logo">
                         <img :src="state.getImagePath('icons-program/html-5.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/css.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/javascript.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/laravel-2.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/mysql-2.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/php.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/sass.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/vite.png')" alt="bootstrap logo">
+                    </div>
+                    <div class="logo">
+                        <img :src="state.getImagePath('icons-program/vuejs.png')" alt="bootstrap logo">
                     </div>
                 </div>
 

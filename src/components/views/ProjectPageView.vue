@@ -89,6 +89,10 @@ export default {
 <style lang="scss" scoped>
 @use '../../assets/scss/partials/variable.scss' as *;
 
+.eb_project-view {
+    //box-shadow: 0 0 50px #ccc;
+}
+
 .eb_active svg {
     fill: $pg-text;
 }
