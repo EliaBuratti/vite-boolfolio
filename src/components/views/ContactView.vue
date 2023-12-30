@@ -29,28 +29,36 @@ export default {
                 email: this.email,
                 message: this.message,
             };
-
             //console.log(leadData);
 
-            axios.post(this.Api.contact_url, leadData).then(response => {
+            axios.get(this.Api.base_url + this.Api.CORS_url).then(response => {
+                //console.log(response);
 
-                const responseQuery = response.data.success;
+                axios.post(this.Api.base_url + this.Api.contact_url, leadData).then(response => {
 
-                if (!responseQuery) {
-                    this.errors = response.data.errors;
-                } else {
-                    this.name = '';
-                    this.object = '';
-                    this.email = '';
-                    this.message = '';
-                    this.success = response.data.success;
-                }
+                    let responseQuery = response.data.success;
+                    console.log(response.data);
 
-                this.load = false;
-            })
-                .catch(error => {
-                    console.error(error.message);
+                    if (!responseQuery) {
+                        this.errors = response.data.errors;
+                    } else {
+                        this.name = '';
+                        this.object = '';
+                        this.email = '';
+                        this.message = '';
+                        this.success = response.data.success;
+                    }
+
+                    this.load = false;
                 })
+                    .catch(error => {
+                        console.error(error.message);
+                    })
+
+            }).catch(error => {
+                console.error(error.message);
+            })
+
 
         }
     }
