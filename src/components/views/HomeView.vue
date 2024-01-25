@@ -45,7 +45,7 @@ export default {
                 </div>
             </div>
             <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                <img width="400" class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpeg')"
+                <img width="400" class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpg')"
                     alt="profile picture">
             </div>
         </div>
@@ -90,7 +90,8 @@ export default {
 <style lang="scss" scoped>
 @use '../../assets/scss/partials/variable.scss' as *;
 
-.eb_jumbo {
-    //background: linear-gradient(0deg, $pg-text 10%, rgb(195, 195, 195) 100%);
+img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 </style>

@@ -81,6 +81,26 @@ export default {
 
                     <div class="my-3 border-2 border-bottom">
 
+                        <h5 class="mb-1">Junior Full-Stack Web Developer TRAINEE</h5>
+                        <div class="text-muted fs-6"><strong>Boolean Careers</strong> Jun-2023 / dec-2023 </div>
+                        <p>
+                            During the intensive Full-Stack Web Development course at Boolean, I had the opportunity to
+                            fully immerse myself in learning web technologies. This experience allowed me to closely examine
+                            the architectures of large platforms, rebuilding them from both the back-end and front-end.
+                            During the intensive Full-Stack Web Development course at Boolean, I had the opportunity to
+                            fully immerse myself in learning web technologies. This experience allowed me to closely examine
+                            the architectures of large platforms, rebuilding them from both the back-end and front-end.
+                            <br>
+                            <strong>Skills:</strong> Attention to detail · Teamwork · RESTful Web Services · MySQL · SASS ·
+                            DBMS · HTML5 ·
+                            PHP · Laravel · CSS · VueJS · Database · Bootstrap · JavaScript · Composer · npm · Dependency
+                            Injection · Front-end development · Web Applications · Git · Back-end Web Development
+                        </p>
+
+                    </div>
+
+                    <div class="my-3 border-2 border-bottom">
+
                         <h5 class="mb-1">AUTOMATED REFRIGERATOR CELL OPERATOR</h5>
                         <div class="text-muted fs-6"><strong>Orogel</strong> Jun-2019 / Jun-2023 </div>
                         <p>
@@ -147,7 +167,7 @@ export default {
 
                     <div class="mb-3">
                         <h5 class="mb-1">IPSIA U. BALDO COMANDINI DI CESENA</h5>
-                        <div class="text-muted fs-6"><strong>Electronic qualification</strong>sept-2010 / jug-2023</div>
+                        <div class="text-muted fs-6"><strong>Electronic qualification</strong>sept-2010 / jug-2013</div>
                         <p>
                             Electrical/Electronic Design and Electrical/Electronic CAD/CADD Design
                         </p>
@@ -156,36 +176,42 @@ export default {
 
                 </div>
 
-                <div class="col-12 mt-5 mt-md-4 d-flex justify-content-between">
+
+                <h3 class="mt-4">
+                    <span class="eb_active">My Skills</span>
+                </h3>
+                <div class="col-12 mt-5 mt-md-4 d-flex justify-content-between flex-wrap">
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/bootstrap.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/bootstrap.png')" alt="bootstrap logo"
+                            title="Bootstrap">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/html-5.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/html-5.png')" alt="html-5 logo" title="HTML-5">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/css.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/css.png')" alt="css logo" title="Css">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/javascript.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/javascript.png')" alt="javascript logo"
+                            title="Javascript">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/laravel-2.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/laravel-2.png')" alt="laravel logo" title="Laravel">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/mysql-2.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/mysql-2.png')" alt="mysql logo" title="MySQL">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/php.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/php.png')" alt="php logo" title="PHP">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/sass.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/sass.png')" alt="sass logo" title="Sass">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/vite.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/vite.png')" alt="vite logo" title="Vite">
                     </div>
                     <div class="logo">
-                        <img :src="state.getImagePath('icons-program/vuejs.png')" alt="bootstrap logo">
+                        <img :src="state.getImagePath('icons-program/vuejs.png')" alt="vuejs logo" title="VueJs">
                     </div>
                 </div>
 
@@ -194,4 +220,14 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo {
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+}
+</style>
