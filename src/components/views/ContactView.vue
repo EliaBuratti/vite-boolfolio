@@ -67,12 +67,15 @@ export default {
 
 <template>
     <div class="container my-5">
-        <h1 class="display-5 fw-bold mb-4"><span class="eb_active">Contact</span></h1>
+        <h1 class="display-5 fw-bold mb-4">
+            <span class="eb_active">Contact</span>
+        </h1>
         <form action="" v-on:submit.prevent="sendLead()">
             <div class="mb-3">
                 <label for="name" class="form-label">Name and Surname</label>
                 <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
-                    placeholder="Mario Rossi" v-model="name" :class="{ 'is-invalid': errors.name }">
+                    placeholder="Mario Rossi" v-model="name" :class="{ 'is-invalid': errors.name }" :disabled="load"
+                    required>
                 <small id="helpId" class="form-text text-muted">Your name and surname</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.name">
                     <strong>Error! </strong>
@@ -83,7 +86,8 @@ export default {
             <div class="mb-3">
                 <label for="object" class="form-label">Subject</label>
                 <input type="text" class="form-control" name="object" id="object" aria-describedby="helpId"
-                    placeholder="Mario Rossi" v-model="object" :class="{ 'is-invalid': errors.object }">
+                    placeholder="Contact about project or else" v-model="object" :class="{ 'is-invalid': errors.object }"
+                    :disabled="load" required>
                 <small id="helpId" class="form-text text-muted">Write an subject for Contact</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.object">
                     <strong>Errors!</strong>
@@ -94,7 +98,8 @@ export default {
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
-                    placeholder="abc@mail.com" v-model="email" :class="{ 'is-invalid': errors.email }">
+                    placeholder="abc@mail.com" v-model="email" :class="{ 'is-invalid': errors.email }" :disabled="load"
+                    required>
                 <small id="emailHelpId" class="form-text text-muted">Your email</small>
                 <div class="alert alert-danger" role="alert" v-if="errors.email">
                     <strong>Errors!</strong>
@@ -104,16 +109,25 @@ export default {
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Your Message</label>
-                <textarea class="form-control" name="message" id="message" v-model="message"
-                    :class="{ 'is-invalid': errors.message }" rows="10" cols="50"></textarea>
+                <textarea @keydown="message.length >= 5000 ? message = message.slice(0, 4999) : message"
+                    class="form-control" name="message" id="message" v-model="message"
+                    :class="{ 'is-invalid': errors.message || message.length > 5000 }" rows="10" cols="50" :disabled="load"
+                    required></textarea>
                 <div class="alert alert-danger mt-4" role="alert" v-if="errors.message">
                     <strong>Errors!</strong>
-                    <span v-for="message in errors.message">{{ message }}</span>
+                    <span v-for=" message  in  errors.message ">{{ message }}</span>
+                </div>
+                <div id="counter">
+                    {{ message.length }} / 5000
                 </div>
 
             </div>
 
-            <button type="submit" class="btn btn-dark rounded-0">Contact</button>
+
+            <button type="submit" class="btn btn-dark rounded-0" :disabled="load">
+                <span v-if="!load">Send</span>
+                <span v-else>Sending...</span>
+            </button>
         </form>
     </div>
 </template>
