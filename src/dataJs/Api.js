@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 
 export default {
     base_url: 'http://127.0.0.1:8000/api',
-    CORS_url: 'sanctum/csrf-cookie',
+    CORS_url: 'http://127.0.0.1:8000/sanctum/csrf-cookie',
     project_url: '/project', //homepage
     type_url: '/type', //type
     technology_url: '/technology', //technology

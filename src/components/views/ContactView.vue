@@ -31,7 +31,7 @@ export default {
             };
             //console.log(leadData);
 
-            axios.get(this.Api.base_url + this.Api.CORS_url).then(response => {
+            axios.get(this.Api.CORS_url).then(response => {
                 //console.log(response);
 
                 axios.post(this.Api.base_url + this.Api.contact_url, leadData).then(response => {
