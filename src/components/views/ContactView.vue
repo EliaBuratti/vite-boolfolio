@@ -14,6 +14,7 @@ export default {
             errors: [],
             success: null,
             load: false,
+            responseMessage: '',
         }
     },
 
@@ -37,7 +38,7 @@ export default {
                 axios.post(this.Api.base_url + this.Api.contact_url, leadData).then(response => {
 
                     let responseQuery = response.data.success;
-                    console.log(response.data);
+                    console.log(response.data.response);
 
                     if (!responseQuery) {
                         this.errors = response.data.errors;
@@ -47,6 +48,7 @@ export default {
                         this.email = '';
                         this.message = '';
                         this.success = response.data.success;
+                        this.responseMessage = response.data.response;
                     }
 
                     this.load = false;
@@ -123,12 +125,21 @@ export default {
 
             </div>
 
+            <div class="w-100 d-flex">
 
-            <button type="submit" class="btn btn-dark rounded-0" :disabled="load">
-                <span v-if="!load">Send</span>
-                <span v-else>Sending...</span>
-            </button>
+                <button type="submit" class="eb_btn-slide d-block" :disabled="load">
+                    <span v-if="!load">Send</span>
+                    <span v-else>Sending...</span>
+                </button>
+
+                <div v-if="responseMessage" class="alert alert-success alert-dismissible fade show m-0 ms-3" role="alert">
+                    <span class="eb_message">{{ responseMessage }}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+
         </form>
+
     </div>
 </template>
 
