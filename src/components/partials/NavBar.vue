@@ -33,7 +33,7 @@ export default {
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse mt-4 mt-md-0" id="navbarSupportedContent">
                 <ul class="eb_nav-list navbar-nav ms-auto mb-lg-0">
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/" class="nav-link" :class="this.$route.fullPath == '/' ? 'eb_active' : ''"
