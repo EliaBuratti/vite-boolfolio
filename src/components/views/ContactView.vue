@@ -36,9 +36,9 @@ export default {
                 //console.log(response);
 
                 axios.post(this.Api.base_url + this.Api.contact_url, leadData).then(response => {
-
+                    this.responseMessage = '';
                     let responseQuery = response.data.success;
-                    console.log(response.data.response);
+                    //console.log(response.data.response);
 
                     if (!responseQuery) {
                         this.errors = response.data.errors;
@@ -133,7 +133,7 @@ export default {
                 </button>
 
                 <div v-if="responseMessage" class="alert alert-success alert-dismissible fade show m-0 ms-3" role="alert">
-                    <span class="eb_message">{{ responseMessage }}</span>
+                    <span class="eb_message" v-text="responseMessage"></span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
