@@ -21,20 +21,19 @@ export default {
 }
 </script>
 <template>
-    <nav class="navbar navbar-expand-lg border-0 eb_nav-bg w-100"
-        :class="this.$route.fullPath == '/' ? 'position-absolute top-0' : ''">
+    <nav class="navbar navbar-expand-lg border-0 eb_nav-bg w-100 shadow-sm"
+        :class="this.$route.fullPath == '/' ? 'top-0' : ''">
         <div class="container-fluid col-md-9 col-xl-10">
             <router-link to="/" class="nav-link active" aria-current="page">
                 <img width="120" class="img-fluid" :src="state.getImagePath('logo-no-background.png')" alt="logo">
             </router-link>
 
 
-            <button class="navbar-toggler mb-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
                 <ul class="eb_nav-list navbar-nav ms-auto mb-lg-0">
                     <li class="p-0 rounded-0 ms-auto">
                         <router-link to="/" class="nav-link" :class="this.$route.fullPath == '/' ? 'eb_active' : ''"

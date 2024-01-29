@@ -27,7 +27,7 @@ export default {
 
 <template>
     <div class="p-2 p-md-5 mb-4 eb_jumbo">
-        <div class="container-fluid pt-md-5 d-flex flex-wrap justify-content-center align-items-center">
+        <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center">
 
             <div class="col-12 col-md-7 text-center text-md-start mt-5">
                 <div class="col-12 col-md-8 mx-auto">
@@ -44,7 +44,7 @@ export default {
                     </router-link>
                 </div>
             </div>
-            <div class="col-12 col-md d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md d-flex align-items-center justify-content-center pt-4 pt-md-0">
                 <img width="400" class="img-fluid rounded-circle" :src="state.getImagePath('profile.jpg')"
                     alt="profile picture">
             </div>
