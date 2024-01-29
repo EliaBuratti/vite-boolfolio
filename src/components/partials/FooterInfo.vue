@@ -50,7 +50,7 @@ export default {
             </div>
 
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
-                <p>© 2023 Company, Inc. All rights reserved.</p>
+                <p v-text="'©' + new Date().getFullYear() + ' Projected and designed by Elia Buratti.'"></p>
             </div>
         </div>
     </div>
